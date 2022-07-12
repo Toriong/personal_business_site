@@ -1,0 +1,162 @@
+.unfixed-wrapper,
+.navbar {
+    height: 150px !important;
+}
+
+.navbar{
+    
+}
+
+.noMargin{
+    margin: 0;
+}
+
+.icon{
+    font-size: 15px;;
+}
+
+.contactNavbar span {
+    font-size: 9px;
+}
+
+.navbar-nav li a {
+    font-size: 15.4px;
+    font-weight: 500;
+}
+
+.navbar-nav li a:hover {
+    text-decoration: underline;
+    animation: 2s;
+}
+
+.contactContainer {
+    height: 36px !important;
+}
+
+.socialMediaAndLocation,
+.contactInfo.onNavbar{
+    max-width: 336px;
+}
+
+.siteLogo img {
+    width: 160px;
+    height: 160px;
+}
+
+.socialMedia.onNavbar>i:nth-child(2) {
+    color: #4267B2
+}
+
+.socialMedia.onNavbar>i:nth-child(3) {
+    color: lightskyblue
+}
+
+.dropDownBtn{
+    bottom: 6px;
+    right: 0;
+}
+
+.dropdown-menu{
+    top: 150px;
+    right: 0;
+    border-radius: 0% !important;
+}
+
+.socialMedia.onNavbar > i{
+  margin-left: 7px;
+  font-size: 11px
+}
+
+.contactContainer,
+.mobileHeader{
+    min-width: 280px;
+}
+
+.dropDownSideMenu{
+    height: 100vh;
+}
+
+.dropDownNavContainer{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 170px;
+}
+
+
+@media(min-width: 768px){
+    .linksOnNavbar{
+        font-size: clamp(11px, 1.4vw, 15.4px) !important
+    }
+
+     .contactNavbar {
+        min-width: 320px;
+        right: 50px;
+    }
+}
+
+@media(max-width: 280px){
+    nav{
+        overflow-x: auto;
+    }
+}
+
+.navMenuContainer{
+    min-width: 280px
+}
+
+
+@media (min-width: 576px){
+    .siteLogo img{
+        transform: translate(40px, -50px);
+    }
+}
+
+@media (max-width: 575px){
+    .leaveReviewLink{
+        border-bottom: rgb(222, 226, 230) solid 1px;
+    }
+}
+
+
+
+
+@media (max-width: 767px) {
+    .contactContainer>div{
+        right: 30px;
+        width: 309px;
+    }
+
+    .siteLogo img{
+        width: 135px;
+        height: 135px;
+        transform: translate(10px, 5px);
+    }
+}
+
+@media(max-width: 767px) and (min-width: 576px){
+    .siteLogo img{
+        width: 135px;
+        height: 135px;
+        transform: translate(10px, -30px);
+    }
+}
+
+@media (max-width: 575px){
+    .siteLogo img{
+        transform: translate(10px, 30px);
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media(min-width: 991px) {
+    .navContainerBtns {
+        right: 20px;
+    }
+
+    .contactContainer,
+    .navContainerBtns {
+        /* padding-right: 40px; */
+    }
+}
