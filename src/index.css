@@ -12,8 +12,16 @@ code {
     monospace;
 }
 
+.alignItemsDefault{
+  align-items: flex-start !important;
+}
+
 .App {
   text-align: center;
+}
+
+.noMargin{
+  margin: 0;
 }
 
 .App-logo {

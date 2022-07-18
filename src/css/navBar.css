@@ -3,9 +3,7 @@
     height: 150px !important;
 }
 
-.navbar{
-    
-}
+
 
 .noMargin{
     margin: 0;
@@ -33,9 +31,17 @@
     height: 36px !important;
 }
 
+.navMainContainer{
+    max-width: 2560px;
+}
+
 .socialMediaAndLocation,
 .contactInfo.onNavbar{
     max-width: 336px;
+}
+
+.noPadding{
+    padding: 0;
 }
 
 .siteLogo img {
@@ -74,12 +80,17 @@
 
 .dropDownSideMenu{
     height: 100vh;
+    width: 200px !important;
 }
 
 .dropDownNavContainer{
     overflow-y: auto;
     height: 100vh;
     padding-bottom: 170px;
+}
+
+.contactTxtOnMobile{
+    font-size: 9px;;
 }
 
 
