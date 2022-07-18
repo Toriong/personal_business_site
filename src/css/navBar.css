@@ -117,6 +117,12 @@
     }
 }
 
+@media(min-width: 768px) and (max-width: 991px){
+    .logoTxt{
+        font-size: clamp(25px, 3vw, 37px);;
+        /* font-size: ; */
+    }
+}
 
 
 
@@ -154,9 +160,7 @@
     .navContainerBtns {
         right: 20px;
     }
-
-    .contactContainer,
-    .navContainerBtns {
-        /* padding-right: 40px; */
-    }
 }
+
+
+

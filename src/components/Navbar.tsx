@@ -20,7 +20,7 @@ const Navbar = () => {
             <nav className="navbar bg-secondary navbar-expand-md flex-column navbar-light bg-light fixed-top border-bottom border-top-0 noPadding alignItemsDefault">
                 <div className='flex-column w-100 h-100 navMainContainer noPadding'>
                     <div className='position-relative contactContainer d-flex row justify-content-end pt-2'>
-                        <div className='col-lg-1 col-md-3 col-sm-5 flex-column contactNavbar d-none d-sm-block d-md-flex position-absolute'>
+                        <div className='col-lg-1 col-md-3 col-sm-5 flex-column contactNavbar d-none d-md-flex position-absolute'>
                             <div className='d-flex justify-content-evenly contactInfo onNavbar '>
                                 <span className='text-nowrap display-inline-block w-50 clickAble txt'><AiTwotonePhone />: #{phoneNum}</span>
                                 <span className='text-nowrap display-inline-block w-50 clickAble txt'><MdEmail />: {businessEmail}</span>
@@ -40,8 +40,8 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className='w-100 h-75 d-flex flex-column row navMenuContainer'>
-                        <div className='w-100 h-25 d-none d-sm-flex justify-content-start siteLogo column ps-5'>
-                            <h3 className='display-6 text-lightskyblue'>Gabe's software services</h3>
+                        <div className='w-100 h-100 d-none d-sm-flex justify-content-center justify-content-md-start align-items-center siteLogo column ps-5'>
+                            <h3 className='display-6 text-lightskyblue logoTxt'>Gabe's software services</h3>
                         </div>
                         <div className="w-100 row collapse navbar-collapse d-none d-md-flex position-relative" id="navbarNav">
                             <ul className="d-md-flex navbar-nav justify-content-end navContainerBtns position-absolute bottom-0">
@@ -62,7 +62,7 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className='w-100 row d-flex d-md-none justify-content-end h-100 position-relative noPadding noMargin'>
+                        <div className='w-100 row d-flex d-sm-none justify-content-end h-100 position-relative noPadding noMargin'>
                             <div className="dropdown">
                                 <button
                                     className="btn btn-secondary dropDownBtn position-absolute d-flex justify-content-center align-items-center"
