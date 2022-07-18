@@ -1,0 +1,113 @@
+.mainPage {
+    min-height: 100vh;
+}
+
+.introPicSec {
+    height: 650px;
+}
+
+#helloEveryBodyTxt {
+    font-size: larger;
+}
+
+.linkBtns{
+    height: 38px;
+    background-color: rgb(108, 117, 125, .4);
+    width: 45.4141px;
+    transition: 2s ease-in-out !important;
+}
+
+.linkBtns:hover{
+    background: linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
+}
+
+.personalWebsiteBtn{
+    font-weight: 700 !important
+}
+
+.businessCalBtnContainer{
+    margin-top: 32px;
+}
+
+.businessCalBtnContainer button{
+    font-weight: 650 !important
+}
+
+.contactTxt {
+    left: 0;
+}
+
+.meImgContainer{
+    height: 451px !important;
+}
+
+
+.myInfoCard {
+    transform: translate(-50%, -60%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+    height: 575px;
+    margin: 1rem;
+    position: relative;
+    width: 65%;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+
+
+.meImg {
+    border-radius: 3%;
+    ;
+}
+
+.introPicAnimation {
+    animation: introPicAnimation 2s;
+}
+
+.shake {
+    animation: shake 2s;
+    animation-delay: 2s;
+    transition-timing-function: ease;
+}
+
+.welcomeTxt {
+    font-size: 18px;
+}
+
+
+@media (min-width: 991px) {
+    .myInfoCard {
+        min-width: 910px;
+    }
+}
+
+
+
+@keyframes introPicAnimation {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -60%);
+    }
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}

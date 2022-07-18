@@ -3,7 +3,9 @@
     height: 150px !important;
 }
 
-
+.logoTxt{
+    font-weight: 450
+}
 
 .noMargin{
     margin: 0;
