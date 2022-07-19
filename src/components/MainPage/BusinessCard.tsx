@@ -12,20 +12,20 @@ const { Body, Title, Text, Img, Subtitle } = Card;
 
 const BusinessCard = () => {
     return (
-        <Card className='position-absolute myInfoCard border border-white noOutline introPicAnimation'>
+        <Card className='myInfoCard border border-white noOutline introPicAnimation fadeInOnMobile'>
             <Body className='h-100'>
                 <section className='d-flex flex-column flex-md-row'>
-                    <div className='w-50 d-flex justify-content-center'>
-                        <div className='w-75 h-100 position-relative rounded meImgContainer'>
-                            <div className='position-absolute overlay w-100 h-100 rounded' />
+                    <div className='d-flex justify-content-center meImgMainContainer'>
+                        <div className='w-75 h-100 position-relative meImgContainer'>
+                            <div className='position-absolute overlay w-100 h-100' />
                             <Img
                                 src={`${window.location.origin}/me.png`}
-                                className='meImg w-100 h-100 rounded'
+                                className='meImg w-100 h-100'
                             />
                         </div>
                     </div>
-                    <div className='w-50'>
-                        <Text className='text-muted d-flex' id='helloEveryBodyTxt'>
+                    <div className='infoContainerBusinessCard'>
+                        <Text className='text-muted d-flex justify-content-center justify-content-md-start' id='helloEveryBodyTxt'>
                             <Text className='pe-2 shake'>HELLO EVERYBODY!</Text>
                             I AM
                         </Text>
@@ -38,15 +38,23 @@ const BusinessCard = () => {
                             I am here to help! Let's get in touch!
                         </Text>
                         <section className='container'>
-                            <div className='row d-flex'>
+                            <div className='row d-none d-md-flex  justify-content-center justify-content-md-start'>
                                 <div className='col-2 d-flex justify-content-center align-items-center'>
                                     <AiOutlineMail className='iconColor' />
                                 </div>
-                                <div className='col-9 position-relative'>
+                                <div className='col-10 position-relative'>
                                     <span className='text-muted position-absolute contactTxt'>{businessEmail}</span>
                                 </div>
                             </div>
-                            <div className='row d-flex mt-2'>
+                            <div className='row d-flex d-md-none w-100 noMargin'>
+                                <div className='col-12 d-flex justify-content-center align-items-center'>
+                                    <div className='contactsOnMobile d-flex justify-content-between'>
+                                        <AiOutlineMail className='iconColor' />
+                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>{businessEmail}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='row d-none d-md-flex mt-2'>
                                 <div className='col-2 d-flex justify-content-center align-items-center'>
                                     <AiOutlinePhone className='iconColor' />
                                 </div>
@@ -54,7 +62,15 @@ const BusinessCard = () => {
                                     <span className='text-muted position-absolute contactTxt'>#{phoneNum}</span>
                                 </div>
                             </div>
-                            <div className='row d-flex mt-2'>
+                            <div className='row d-flex d-md-none w-100 mt-2 noMargin'>
+                                <div className='col-12 d-flex justify-content-center align-items-center'>
+                                    <div className='contactsOnMobile d-flex justify-content-between'>
+                                        <AiOutlinePhone className='iconColor' />
+                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>{phoneNum}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='row d-none d-md-flex mt-2'>
                                 <div className='col-2 d-flex justify-content-center align-items-center'>
                                     <IoLocationOutline className='iconColor' />
                                 </div>
@@ -62,7 +78,15 @@ const BusinessCard = () => {
                                     <span className='text-muted position-absolute contactTxt'>{currentLocation}</span>
                                 </div>
                             </div>
-                            <div className='row d-flex mt-4'>
+                            <div className='row d-flex d-md-none w-100 mt-2 noMargin'>
+                                <div className='col-12 d-flex justify-content-center align-items-center'>
+                                    <div className='contactsOnMobile d-flex justify-content-between'>
+                                        <IoLocationOutline className='iconColor' />
+                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>{currentLocation}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='row d-flex mt-4 justify-content-center justify-content-md-start w-100'>
                                 <div className='col-2'>
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline'

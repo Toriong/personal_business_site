@@ -2,27 +2,27 @@
     font-size: larger;
 }
 
-.linkBtns{
+.linkBtns {
     height: 38px;
     background-color: rgb(108, 117, 125, .4);
     width: 45.4141px;
     transition: 2s ease-in-out !important;
 }
 
-.linkBtns:hover{
+.linkBtns:hover {
     background: linear-gradient(0deg, #766dff 0%, #88f3ff 100%);
 }
 
-.personalWebsiteBtn{
+.personalWebsiteBtn {
     font-weight: 700 !important
 }
 
 .businessCallBtnContainer,
-.businessCalBtnContainer{
+.businessCalBtnContainer {
     margin-top: 32px;
 }
 
-.businessCalBtnContainer button{
+.businessCalBtnContainer button {
     font-weight: 650 !important
 }
 
@@ -30,7 +30,13 @@
     left: 0;
 }
 
-.meImgContainer{
+
+.contactTxtOnCard {
+    font-size: 10px;
+}
+
+
+.meImgContainer {
     height: 451px !important;
 }
 
@@ -44,16 +50,13 @@
     cursor: pointer;
     height: 575px;
     margin: 1rem;
-    position: relative;
+    position: absolute;
     width: 65%;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 
 
-.meImg {
-    border-radius: 3%;
-}
 
 .introPicAnimation {
     animation: introPicAnimation 2s;
@@ -69,32 +72,139 @@
     font-size: 18px;
 }
 
-@media(min-width: 768px) and (max-width: 1200px){
-    .meImgContainer{
+.contactsOnMobile {
+    width: 268.352px;
+}
+
+
+
+@media(min-width: 768px) and (max-width: 1200px) {
+    .meImgContainer {
         height: 300px !important
     }
 }
 
 
 @media (min-width: 768px) {
-    .myInfoCard{
-        min-width: 643px;;
+    .myInfoCard {
+        min-width: 643px;
+        ;
+    }
+
+    .meImgMainContainer {
+        width: 50%;
+    }
+
+
+    .meImgContainer>*,
+    .meImgContainer {
+        border-radius: .25rem !important;
+    }
+
+    .infoContainerBusinessCard {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .infoContainerBusinessCard>* {
+        text-align: center;
+    }
+
+    .introPicSec {
+        height: 970px;
+    }
+
+    .infoContainerBusinessCard {
+        width: 100%;
+    }
+
+    .myInfoCard {
+        /* transform: translate(-50%, -30%); */
+        height: fit-content;
+    }
+
+    .meImgMainContainer {
+        width: 100%;
+        height: 275px;
+    }
+
+    .myInfoCard {
+        padding-bottom: 25px;
+    }
+
+
+    .meImgContainer>*,
+    .meImgContainer {
+        border-radius: 50%;
+        width: 250px !important;
+        height: 250px !important
+    }
+}
+
+@media(min-width: 576px) and (max-width: 767px) {
+    .myInfoCard {
+        min-width: 496.547px;
+    }
+}
+
+@media(max-width: 575px) {
+    .myInfoCard {
+        width: 100% !important;
+        height: 100% !important;
+        transform: none;
+        ;
+        position: static;
+        margin: 0;
+        border-bottom: 0%;
+        ;
+        top: 0%;
+        left: 0%;
+        border-radius: 0%;
+        ;
+    }
+
+    .linkBtnsContainer {
+        /* min-width: 341px */
+    }
+
+    .buttonLinksContainer{
+       min-width: 317px; 
+    }
+}
+
+@media(min-width: 576px) {
+    @keyframes introPicAnimation {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(-50%, -60%);
+        }
+    }
+}
+
+.fadeInOnMobile {
+    animation: fadeInOnMobile 2s;
+}
+
+@media(max-width: 575px) {
+    @keyframes fadeInOnMobile {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 }
 
 
-
-@keyframes introPicAnimation {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -40%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate(-50%, -60%);
-    }
-}
 
 @keyframes shake {
     from {

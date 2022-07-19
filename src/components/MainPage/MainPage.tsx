@@ -5,7 +5,7 @@ import BusinessCard from './BusinessCard';
 
 const MainPage = () => {
     return (
-        <div className='container-fluid noPadding noMargin mainPage pt-3'>
+        <div className='container-fluid noPadding noMargin mainPage pt-0 pt-sm-3'>
             <section className='introPicSec position-relative'>
                 <BusinessCard />
             </section>
