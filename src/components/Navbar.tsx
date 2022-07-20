@@ -38,7 +38,7 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className='column d-flex d-md-none w-100 h-100 justify-content-center align-items-center pt-3 largerHeight mobileHeader noPadding'>
-                            <h3 className='display-6 text-lightskyblue logoTxt'>Gabe's software services</h3>
+                            <h3 className='display-6 text-lightskyblue logoTxt websiteTitleOnMobile'>Gabe's software services</h3>
                         </div>
                     </div>
                     <div className='w-100 h-75 d-flex flex-column row navMenuContainer'>

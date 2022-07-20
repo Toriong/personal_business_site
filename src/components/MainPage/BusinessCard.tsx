@@ -87,16 +87,28 @@ const BusinessCard = () => {
                                 </div>
                             </div>
                             <div className='row d-flex mt-4 justify-content-center justify-content-md-start w-100'>
-                                <div className='col-2'>
+                                <div className='col-2 d-none d-sm-block'>
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline'
                                     >
                                         <ImLinkedin2 />
                                     </Button>
                                 </div>
-                                <div className='col-2'>
+                                <div className='col-2 d-none d-sm-block'>
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline personalWebsiteBtn'
+                                    >
+                                        GT
+                                    </Button>
+                                </div>
+                                <div className='col-12 d-flex d-sm-none justify-content-center'>
+                                    <Button
+                                        className='d-flex justify-content-center align-items-center linkBtns noOutline me-2'
+                                    >
+                                        <ImLinkedin2 />
+                                    </Button>
+                                    <Button
+                                        className='d-flex justify-content-center align-items-center linkBtns noOutline personalWebsiteBtn ms-2'
                                     >
                                         GT
                                     </Button>

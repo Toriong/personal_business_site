@@ -41,6 +41,11 @@
 }
 
 
+
+.myInfoCard * {
+    /* border: solid pink; */
+}
+
 .myInfoCard {
     transform: translate(-50%, -60%);
     top: 50%;
@@ -169,8 +174,8 @@
         /* min-width: 341px */
     }
 
-    .buttonLinksContainer{
-       min-width: 317px; 
+    .buttonLinksContainer {
+        min-width: 317px;
     }
 }
 
@@ -188,11 +193,13 @@
     }
 }
 
-.fadeInOnMobile {
-    animation: fadeInOnMobile 2s;
-}
+
 
 @media(max-width: 575px) {
+    .fadeInOnMobile {
+        animation: fadeInOnMobile 2s;
+    }
+
     @keyframes fadeInOnMobile {
         from {
             opacity: 0;
