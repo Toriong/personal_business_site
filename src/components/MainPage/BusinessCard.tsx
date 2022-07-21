@@ -86,7 +86,7 @@ const BusinessCard = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='row d-flex mt-4 justify-content-center justify-content-md-start w-100'>
+                            <div className='row d-flex mt-4 justify-content-center justify-content-md-start w-100 noMargin'>
                                 <div className='col-2 d-none d-sm-block'>
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline'
@@ -101,7 +101,7 @@ const BusinessCard = () => {
                                         GT
                                     </Button>
                                 </div>
-                                <div className='col-12 d-flex d-sm-none justify-content-center'>
+                                <div className='col-12 d-flex d-sm-none justify-content-center noMargin noPadding'>
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline me-2'
                                     >

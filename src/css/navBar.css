@@ -15,13 +15,9 @@
     font-size: 15px;;
 }
 
-.navbar *{
-    border: solid pink;
-
-}
-
 .websiteTitleOnMobile{
-    font-size: 14px;
+    /* font-size: 23px; */
+    font-size: clamp(23px, 4vw, 33.505px);
 }
 
 .contactNavbar span {
@@ -86,7 +82,7 @@
 
 .contactContainer,
 .mobileHeader{
-    min-width: 280px;
+    min-width: 20px;
 }
 
 .dropDownSideMenu{

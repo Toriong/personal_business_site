@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className='unfixed-wrapper'>
             <nav className="navbar bg-secondary navbar-expand-md flex-column navbar-light bg-light fixed-top border-bottom border-top-0 noPadding alignItemsDefault noMargin">
                 <div className='flex-column w-100 h-100 navMainContainer noPadding noMargin'>
-                    <div className='position-relative contactContainer d-flex row justify-content-end pt-2'>
+                    <div className='position-relative contactContainer d-flex row justify-content-end pt-2 noMargin'>
                         <div className='col-lg-1 col-md-3 col-sm-5 flex-column contactNavbar d-none d-md-flex position-absolute'>
                             <div className='d-flex justify-content-evenly contactInfo onNavbar '>
                                 <span className='text-nowrap display-inline-block w-50 clickAble txt'><AiTwotonePhone />: #{phoneNum}</span>
@@ -42,7 +42,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className='w-100 h-75 d-flex flex-column row navMenuContainer'>
-                        <div className='w-100 h-100 d-none d-md-flex justify-content-center justify-content-md-start align-items-center siteLogo column ps-5'>
+                        <div className='h-100 d-none d-md-flex justify-content-center justify-content-md-start align-items-center siteLogo column ps-5'>
                             <h3 className='display-6 text-lightskyblue logoTxt'>Gabe's software services</h3>
                         </div>
                         <div className="w-100 row collapse navbar-collapse d-none d-md-flex position-relative" id="navbarNav">
