@@ -9,6 +9,7 @@ const MainPage = () => {
             <section className='introPicSec position-relative'>
                 <BusinessCard />
             </section>
+
         </div>
     )
 }
