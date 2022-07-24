@@ -1,5 +1,10 @@
 .productSec{
-    /* height: 800px; */
+    max-width: 2560px;
+}
+
+.productImg{
+    max-height: 280.781px !important;
+    max-width: 595px !important;
 }
 
 @media(max-width: 991px){

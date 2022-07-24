@@ -3,12 +3,6 @@ import { ProductTemplateProps } from '../../../interfaces/interfaces'
 import Button from 'react-bootstrap/Button';
 import '../../../css/products/productTemplate.css'
 
-// GOAL: this section will have th products that will offer to my clients 
-// on left: will have screen shots of the products 
-// on the right: will have the descriptions of the products 
-
-
-
 const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts }) => {
     const [img1, img2, img3] = imgs;
     const [text1, text2, text3, text4] = descriptionTexts

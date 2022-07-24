@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/mainPage/mainPage.css'
 import BusinessCard from './BusinessCard';
 import ProductSec from './ProductSec';
+import ReviewsSec from './reviews/ReviewsSec';
 
 
 
@@ -12,6 +13,7 @@ const MainPage = () => {
                 <BusinessCard />
             </section>
             <ProductSec />
+            <ReviewsSec />
         </div>
     )
 }
