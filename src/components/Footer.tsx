@@ -1,0 +1,104 @@
+import React from 'react';
+import { MDBFooter } from 'mdb-react-ui-kit';
+import { AiFillTwitterSquare, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
+import { AiFillLinkedin } from "react-icons/ai";
+import Button from 'react-bootstrap/Button';
+import '../css/footer.css'
+
+
+const Footer = () => {
+    return (
+        <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
+            <section className='d-flex justify-content-center justify-content-lg-start p-4 border-bottom'>
+                <div className='me-5'>
+                    <span>Get connected with me on social networks and my website:</span>
+                </div>
+                <div>
+                    <a href='' className='me-2 text-reset'>
+                        <AiFillLinkedin style={{ color: 'rgb(13, 110, 253)' }} />
+                    </a>
+                    <a href='' className='me-2 text-reset'>
+                        <AiFillTwitterSquare style={{ color: 'lightskyblue' }} />
+                    </a>
+                    <a href='' className='me-2 text-reset noDecoration bg-secondary' style={{ width: '10px', height: '10px' }}>
+                        <span style={{ width: '10px', height: '10px', fontSize: '8px' }} className='text-white myWebSiteLink'>GT</span>
+                    </a>
+                </div>
+            </section>
+
+            <section className=''>
+                <div className='container text-center text-md-start mt-5'>
+                    <div className='row mt-3'>
+                        <div className='col-md-3 col-lg-4 col-xl-3 mx-auto mb-4'>
+                            <h6 className='text-uppercase fw-bold mb-4 text-center text-lg-start'>
+                                Gabe's Software Services, LLC
+                            </h6>
+                            <p className='text-center text-lg-start'>
+                                <i className='fas fa-gem'>
+                                    "To serve first."
+                                </i>
+                            </p>
+                        </div>
+
+                        <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
+                            <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
+                            <p>
+                                <a href='#!' className='text-reset'>
+                                    Auto Repair Shop Site
+                                </a>
+                            </p>
+                            <p>
+                                <a href='#!' className='text-reset'>
+                                    View More
+                                </a>
+                            </p>
+                        </div>
+
+                        <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
+                            <h6 className='text-uppercase fw-bold mb-4'>Navigate to:</h6>
+                            <p>
+                                <a href='#!' className='text-reset'>
+                                    Our Meetings
+                                </a>
+                            </p>
+                            <p>
+                                <a href='#!' className='text-reset'>
+                                    Contracts
+                                </a>
+                            </p>
+                            <p>
+                                <a href='#!' className='text-reset'>
+                                    Contact
+                                </a>
+                            </p>
+                        </div>
+
+                        <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
+                            <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
+                            <p className='contactTxtFooter'>
+                                <AiOutlineMail className='iconColor me-1' />
+                                gtorion97freelancing@gmail.com
+                            </p>
+                            <p className='contactTxtFooter'>
+                                <AiOutlinePhone className='iconColor me-1' />
+                                #425-219-7437
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+                © 2021 Copyright:
+                <span className='text-reset fw-bold ms-1'>
+                    <u>
+                        Gabriel Torion
+                    </u>
+                </span>
+            </div>
+        </MDBFooter>
+    );
+}
+
+
+export default Footer;

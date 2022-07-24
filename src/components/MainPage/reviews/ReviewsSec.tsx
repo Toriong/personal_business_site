@@ -31,8 +31,8 @@ const ReviewsSec = () => {
                         <ReviewAutoCarousel reviews={dummyReviews} />
                         :
                         <section className='w-100 d-flex flex-column justify-content-center align-items-center'>
-                            <span className='display-6'>No Reviews yet! Maybe you will be the first!</span>
-                            <span className='display-6 mt-3'>😉</span>
+                            <span className='display-6 text-center'>No Reviews yet! Maybe you will be the first!</span>
+                            <span className='display-6 mt-3 text-center'>😉</span>
                         </section>
                     }
                 </section>

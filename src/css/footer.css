@@ -1,0 +1,5 @@
+@media(max-width: 575px){
+    .contactTxtFooter{
+        font-size: clamp(12px, 3vw, 30px);
+    }
+}
