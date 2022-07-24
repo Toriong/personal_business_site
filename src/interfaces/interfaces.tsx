@@ -18,3 +18,7 @@ export interface Review {
 export interface ReviewsProp {
     reviews: Array<Review>
 }
+
+export interface BookACallBtnProp {
+    isOnBusinessCard?: boolean
+}

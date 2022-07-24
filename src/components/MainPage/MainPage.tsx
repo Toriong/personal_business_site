@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../css/mainPage/mainPage.css'
 import BusinessCard from './BusinessCard';
+import LikeWhatYouSee from './LikeWhatYouSee';
 import ProductSec from './ProductSec';
 import ReviewsSec from './reviews/ReviewsSec';
 
@@ -14,6 +15,7 @@ const MainPage = () => {
             </section>
             <ProductSec />
             <ReviewsSec />
+            <LikeWhatYouSee />
         </div>
     )
 }

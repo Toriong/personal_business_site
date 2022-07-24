@@ -16,7 +16,7 @@ const ReviewsSec = () => {
     const areReviewsPresenet = false
 
     return (
-        <section className='container-fluid mt-5 border-bottom reviewsSection'>
+        <section className='container-fluid mt-5 border-bottom reviewsSection pb-4'>
             <section className='row d-flex justify-content-center'>
                 <section className='column d-flex justify-content-center'>
                     <h3 className='display-5 text-dark text-center'>
