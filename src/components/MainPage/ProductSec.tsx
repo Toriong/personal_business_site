@@ -20,7 +20,7 @@ const ProductSec = () => {
             <ProductTitle title={'Auto Repair Shop Site'} />
             <ProductTemplate imgs={imgsProduct1} descriptionTexts={product1Texts} />
             <section className='row noMargin noPadding'>
-                <section className='col-12 d-flex justify-content-center align-items-center mt-5 p-4 border-top'>
+                <section className='col-12 d-flex justify-content-center align-items-center mt-5 p-4'>
                     <Button variant='secondary'>VIEW ALL PRODUCTS</Button>
                 </section>
             </section>

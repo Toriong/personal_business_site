@@ -6,6 +6,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { ImLinkedin2 } from "react-icons/im";
 import Button from 'react-bootstrap/Button';
 import '../../css/mainPage/businessCard.css'
+import TwitterBtn from '../../buttons/TwitterBtn';
 
 const { Body, Title, Text, Img, Subtitle } = Card;
 
@@ -95,6 +96,9 @@ const BusinessCard = () => {
                                     </Button>
                                 </div>
                                 <div className='col-2 d-none d-sm-block'>
+                                    <TwitterBtn />
+                                </div>
+                                <div className='col-2 d-none d-sm-block'>
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline personalWebsiteBtn'
                                     >
@@ -107,6 +111,7 @@ const BusinessCard = () => {
                                     >
                                         <ImLinkedin2 />
                                     </Button>
+                                    <TwitterBtn />
                                     <Button
                                         className='d-flex justify-content-center align-items-center linkBtns noOutline personalWebsiteBtn ms-2'
                                     >

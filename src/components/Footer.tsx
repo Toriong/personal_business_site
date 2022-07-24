@@ -1,28 +1,25 @@
 import React from 'react';
 import { MDBFooter } from 'mdb-react-ui-kit';
-import { AiFillTwitterSquare, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
-import { AiFillLinkedin } from "react-icons/ai";
-import Button from 'react-bootstrap/Button';
+import { AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
+import LinkedInBtn from '../buttons/LinkedInBtn';
+import TwitterBtn from '../buttons/TwitterBtn';
+import MyWebSiteBtn from '../buttons/MyWebSiteBtn';
+import moment from 'moment'
 import '../css/footer.css'
 
 
 const Footer = () => {
+    const currentYear = moment().year()
     return (
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-            <section className='d-flex justify-content-center justify-content-lg-start p-4 border-bottom'>
-                <div className='me-5'>
+            <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
+                <div className='d-none d-lg-block me-5'>
                     <span>Get connected with me on social networks and my website:</span>
                 </div>
-                <div>
-                    <a href='' className='me-2 text-reset'>
-                        <AiFillLinkedin style={{ color: 'rgb(13, 110, 253)' }} />
-                    </a>
-                    <a href='' className='me-2 text-reset'>
-                        <AiFillTwitterSquare style={{ color: 'lightskyblue' }} />
-                    </a>
-                    <a href='' className='me-2 text-reset noDecoration bg-secondary' style={{ width: '10px', height: '10px' }}>
-                        <span style={{ width: '10px', height: '10px', fontSize: '8px' }} className='text-white myWebSiteLink'>GT</span>
-                    </a>
+                <div className='d-flex'>
+                    <LinkedInBtn />
+                    <TwitterBtn />
+                    <MyWebSiteBtn />
                 </div>
             </section>
 
@@ -34,7 +31,7 @@ const Footer = () => {
                                 Gabe's Software Services, LLC
                             </h6>
                             <p className='text-center text-lg-start'>
-                                <i className='fas fa-gem'>
+                                <i>
                                     "To serve first."
                                 </i>
                             </p>
@@ -89,7 +86,7 @@ const Footer = () => {
             </section>
 
             <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-                © 2021 Copyright:
+                @{currentYear} Copyright:
                 <span className='text-reset fw-bold ms-1'>
                     <u>
                         Gabriel Torion

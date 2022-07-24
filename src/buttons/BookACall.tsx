@@ -8,7 +8,7 @@ const BookACall: FC<BookACallBtnProp> = ({ isOnBusinessCard }) => {
         style={{ fontWeight: '700' }}
         className='d-flex justify-content-center align-items-center noOutline businessCalBtn pulse'
     >
-        {isOnBusinessCard ? 'SET UP A BUSINESS CALL!' : 'BOOK A CALL!'}
+        {isOnBusinessCard ? 'SET UP A BUSINESS CALL!' : 'CONTACT ME!'}
     </Button>
 }
 
