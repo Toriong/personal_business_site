@@ -1,3 +1,18 @@
 .productSec{
     /* height: 800px; */
 }
+
+@media(max-width: 991px){
+    .productScreenShots{
+        /* padding: ; */
+        padding: 0px 50px 0px 50px !important;
+    }
+
+    .descriptionHeading{
+        font-size: clamp(25px, 5vw, 35px);
+    }
+
+    .descriptionTxt{
+        font-size: clamp(20px, 3vw, 24px)
+    }
+}

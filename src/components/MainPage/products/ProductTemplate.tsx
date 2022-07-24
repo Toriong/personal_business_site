@@ -14,31 +14,30 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts }) =
     const [text1, text2, text3, text4] = descriptionTexts
 
     return (
-        <section className='row noMargin noPadding pt-3 d-flex flex-column flex-md-row'>
-            <section className='d-flex flex-column col-12 col-md-6 productScreenShots'>
+        <section className='row noMargin noPadding pt-3 d-flex flex-column flex-lg-row'>
+            <section className='d-flex flex-column col-12 col-lg-6 productScreenShots'>
                 <section className='d-flex flex-column'>
                     <section className='d-flex justify-content-center align-items-center'>
-                        <img src={img1} alt="product_img" className='w-50 h-75 rounded' />
+                        <img src={img1} alt="product_img" className='w-50 h-75 rounded productImg' />
                     </section>
                     <section className='d-flex justify-content-between'>
-                        <img src={img2} alt="product_img" className='w-50 h-75' />
-                        <img src={img3} alt="product_img" className='w-50 h-75' />
+                        <img src={img2} alt="product_img" className='w-50 h-75 productImg me-1' />
+                        <img src={img3} alt="product_img" className='w-50 h-75 productImg ms-1' />
                     </section>
                 </section>
-                <section className='d-flex justify-content-center align-items-center'>
-                    <div className='productShadow  rounded-circle' />
+                <section className='d-flex pt-5 pt-lg-0'>
+                    <div className='productShadow  rounded-circle w-100' />
                 </section>
             </section>
-            <div className='d-flex flex-column col-12 col-md-6'>
+            <div className='d-flex flex-column col-12 col-lg-6 mt-4 mt-lg-0'>
                 <section className='productSection h-75 ps-5 pt-4 pe-5 d-flex flex-column'>
-                    <h4 className='bolder'><u>DESCRIPTION: </u></h4>
-                    <span className='text-muted'>{text1}</span>
-                    <span className='text-muted mt-2'>{text2}</span>
-                    <span className='text-muted mt-2'>{text3}</span>
-                    <span className='text-muted mt-2'>{text4}</span>
+                    <h4 className='bolder text-center text-lg-start descriptionHeading pb-3 pb-lg-0'><u>DESCRIPTION: </u></h4>
+                    <span className='text-muted text-center text-lg-start descriptionTxt'><i>{text1}</i></span>
+                    <span className='text-muted mt-2 text-center text-lg-start descriptionTxt'><i>{text2}</i></span>
+                    <span className='text-muted mt-2 text-center text-lg-start descriptionTxt'><i>{text3}</i></span>
+                    <span className='text-muted mt-2 text-center text-lg-start descriptionTxt'>{text4}</span>
                 </section>
                 <section className='viewProductBtnSec d-flex justify-content-center align-items-center'>
-                    {/* put button here to take the user to the product page */}
                     <Button variant='primary'>VIEW PRODUCT</Button>
                 </section>
             </div>
