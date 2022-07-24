@@ -35,7 +35,7 @@ const BusinessCard = () => {
                             My passion is everything software development, and I am here to help you accomplish your goals using code!
                         </Text>
                         <Text className='text-muted mt-3 welcomeTxt'>
-                            I am here to help! Let's get in touch!
+                            I am here to serve! Let's get in touch!
                         </Text>
                         <section className='container'>
                             <div className='row d-none d-md-flex  justify-content-center justify-content-md-start'>

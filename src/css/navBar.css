@@ -17,7 +17,7 @@
 
 .websiteTitleOnMobile{
     /* font-size: 23px; */
-    font-size: clamp(23px, 4vw, 33.505px);
+    font-size: clamp(20px, 4vw, 33.505px);
 }
 
 .contactNavbar span {

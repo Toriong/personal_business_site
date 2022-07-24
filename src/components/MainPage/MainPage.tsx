@@ -1,6 +1,8 @@
 import React from 'react'
 import '../../css/mainPage/mainPage.css'
 import BusinessCard from './BusinessCard';
+import ProductSec from './ProductSec';
+
 
 
 const MainPage = () => {
@@ -9,7 +11,7 @@ const MainPage = () => {
             <section className='introPicSec position-relative'>
                 <BusinessCard />
             </section>
-
+            <ProductSec />
         </div>
     )
 }
