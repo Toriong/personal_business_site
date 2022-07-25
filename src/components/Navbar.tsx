@@ -56,16 +56,16 @@ const Navbar = () => {
                                     <a className="nav-link linksOnNavbar text-secondary" href="/">HOME</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link linksOnNavbar text-secondary" href="/repairs">PRODUCTS</a>
+                                    <a className="nav-link linksOnNavbar text-secondary" href="/products">PRODUCTS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link linksOnNavbar text-secondary" href="/oil">OUR MEETINGS</a>
+                                    <a className="nav-link linksOnNavbar text-secondary" href="/meetings">OUR MEETINGS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link linksOnNavbar text-secondary" href="/tires">CONTRACTS</a>
+                                    <a className="nav-link linksOnNavbar text-secondary" href="/contracts">CONTRACTS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link linksOnNavbar text-secondary" href="/about">CONTACT</a>
+                                    <a className="nav-link linksOnNavbar text-secondary" href="/contact">CONTACT</a>
                                 </li>
                             </ul>
                         </div>
@@ -88,7 +88,7 @@ const Navbar = () => {
                                             <a className="nav-link text-muted text-start" href="/repairs">PRODUCTS</a>
                                             <a className="nav-link text-muted text-start" href="/oil">OUR MEETINGS</a>
                                             <a className="nav-link text-muted text-start" href="/tires">CONTRACTS</a>
-                                            <a className="nav-link text-muted text-start" href="/about">CONTACT</a>
+                                            <a className="nav-link text-muted text-start" href="/contact">CONTACT</a>
                                             <div className='text-nowrap d-flex justify-content-center mt-2'>
                                                 <span className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile'>
                                                     <MdEmail /> gtorion97freelancing@gmail.com
