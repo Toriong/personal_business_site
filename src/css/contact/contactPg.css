@@ -1,5 +1,7 @@
 .contactPg{
-    min-height: 600px
+    min-height: 600px;
+    padding-bottom: 70px;
+    max-width: 2560px;
 }
 
 .formTypeBtn{
@@ -15,8 +17,14 @@
     display: flex;
 }
 
+.submitBtn{
+    width: 150px;
+}
+
 .contactForm{
     padding-bottom:70px;
+    width: 60%;
+    max-width: 850px;
 }
 
 .emailInputGroup{
@@ -66,6 +74,14 @@
 
     .errorMsgTxt{
         font-size: 8px !important;
+    }
+
+    .submitBtn{
+        width: 75% !important;
+    }
+
+    .contactForm{
+        min-width: 260.594px;
     }
 }
 

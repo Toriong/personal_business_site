@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { RobotTestObj, TestObj } from '../../interfaces/interfaces';
 import RobotTest from './RobotTest';
-// import robotTestData from '../../data/robotTestData.json'
+import { BusinessFormContext } from '../../providers/Providers'
 
 const { Group, Control, Label, Text } = Form;
 
@@ -25,6 +25,7 @@ const robotTestData = [
 
 const ContactForm = () => {
     // const { setIsSendingEmailModalOn, setIsResultsModalForSubmitOn, setModalTxt, setModalHeader, isSendingEmailModalOn } = useContext(ModalContext)
+    const { isGeneralEnquiryOn } = useContext(BusinessFormContext)
     const getTest = (tests: Array<TestObj>): TestObj => {
         const randomIndex = Math.floor(Math.random() * tests.length);
         return robotTestData[randomIndex]
@@ -39,10 +40,11 @@ const ContactForm = () => {
         phoneNum: '',
         subject: '',
         message: '',
+        timeAvailability: ''
     }
     const [form, setForm] = useState(formDefaultVal);
     const [test, setTest] = useState<RobotTestObj>({ currentTest: _currentTest, userInput: "" });
-    const { firstName, lastName, email, phoneNum, subject, message } = form;
+    const { firstName, lastName, email, phoneNum, subject, message, timeAvailability } = form;
 
 
 
@@ -96,15 +98,10 @@ const ContactForm = () => {
 
 
     return (
-        <Form className='pl-5 w-100 position-relative d-flex flex-column justify-content-center justify-content-sm-start contactForm'>
-            <section className='row'>
-                <section className='col-12'>
-                    <h2 className='text-dark display-6 text-center text-lg-start'>Contact us</h2>
-                </section>
-            </section>
+        <Form className='position-relative d-flex flex-column justify-content-center justify-content-sm-start contactForm'>
             <Group className="row mt-4 nameInputGroup" controlId="formNameInput">
                 <div className='col-6 nameContainerSM'>
-                    <Label className='w-100 text-start'>*Name</Label>
+                    <Label className='w-100 text-start fw-bold'>*Name</Label>
                     <Control
                         type="text"
                         placeholder="First"
@@ -137,7 +134,7 @@ const ContactForm = () => {
                 </div>
             </Group>
             <Group className="d-block d-sm-none firstNameContainer mb-3" controlId="formBasicPassword">
-                <Label>*First Name</Label>
+                <Label className='fw-bold'>*First Name</Label>
                 <Control type="text" placeholder="Enter first name" name='firstName' value={firstName} style={{ color: isFirstNameError ? 'red' : "#212529", border: isFirstNameError ? 'solid red .5px' : '1px solid #ced4da' }} onChange={event => { handleOnChange(event as any) }} />
                 {isFirstNameError &&
                     <Text className="pl-5 text-danger" style={{ fontSize: '8px' }}>
@@ -146,7 +143,7 @@ const ContactForm = () => {
                 }
             </Group>
             <Group className="mb-3 d-block d-sm-none lastNameContainer" controlId="formBasicPassword">
-                <Label>*Last Name</Label>
+                <Label className='fw-bold'>*Last Name</Label>
                 <Control
                     type="text"
                     placeholder="Enter last name"
@@ -162,7 +159,7 @@ const ContactForm = () => {
                 }
             </Group>
             <Group controlId="formBasicPassword" className='emailInputGroup'>
-                <Label>*Email</Label>
+                <Label className='fw-bold'>*Email</Label>
                 <Control
                     type="email"
                     placeholder="Enter email"
@@ -180,7 +177,7 @@ const ContactForm = () => {
                 </div>
             </Group>
             <Group className="mb-3" controlId="formBasicPassword">
-                <Label>Phone #</Label>
+                <Label className='fw-bold'>Phone #</Label>
                 <Control
                     type="text"
                     pattern='[0-9]*'
@@ -190,8 +187,19 @@ const ContactForm = () => {
                     value={phoneNum}
                 />
             </Group>
+            {!isGeneralEnquiryOn &&
+                <Group className="mb-3" controlId="formBasicPassword">
+                    <Label className='fw-bold'>*Time Availability</Label>
+                    <Control
+                        type="text"
+                        placeholder="Example: Mon-Fri, 10am-3pm"
+                        name='timeAvailability'
+                        onChange={event => { handleOnChange(event as any) }}
+                        value={timeAvailability}
+                    />
+                </Group>}
             <Group className='mb-3' controlId='titleEmailInput'>
-                <Label>Title of email</Label>
+                <Label className='fw-bold'>Title of email</Label>
                 <Control
                     type='text'
                     placeholder="Enter title/subject of query"
@@ -201,7 +209,7 @@ const ContactForm = () => {
                 />
             </Group>
             <Group className="messageGroup" controlId="formBasicCheckbox">
-                <Label>*Your message</Label>
+                <Label className='fw-bold'>*Your message</Label>
                 <Control
                     as='textarea'
                     placeholder="Please enter your message here."
@@ -216,11 +224,11 @@ const ContactForm = () => {
                 </Text>
             </Group>
             <RobotTest setTest={setTest} test={test} didTestFail={didTestFail} setDidTestFail={setDidTestFail} />
-            <div className='position-absolute bottom-0 w-100 d-flex justify-content-center justify-content-lg-end'>
+            <div className='position-absolute bottom-0 w-100 d-flex justify-content-center'>
                 <Button
                     variant="primary"
                     type="submit"
-                    className='submitBtn'
+                    className='submitBtn w-25'
                     // disabled={isSendingEmailModalOn}
                     onClick={event => { handleOnSubmit(event) }}>
                     {/* {isSendingEmailModalOn ? 'Sending email..' : "Submit"} */}

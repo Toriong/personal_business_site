@@ -1,3 +1,7 @@
+.subContainerFooter{
+    max-width: 2560px;
+}
+
 @media(max-width: 575px){
     .contactTxtFooter{
         font-size: clamp(12px, 3vw, 30px);
