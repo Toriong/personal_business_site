@@ -3,6 +3,71 @@
 }
 
 .formTypeBtn{
-    color: grey;
-    
+    color: grey;  
 }
+
+.messageTextArea{
+    height: 400px;
+}
+
+.nameInputGroup{
+    height: 95px;
+    display: flex;
+}
+
+.contactForm{
+    padding-bottom:70px;
+}
+
+.emailInputGroup{
+    height: 100px
+}
+
+.messageGroup{
+    height: 460px;
+}
+
+.lastNameContainer,
+.firstNameContainer{
+    height: 80px;
+}
+
+
+.testInput{
+    width: 50% !important;
+}
+
+.robotTestContainer{
+    height: 145px;
+}
+
+.testSec{
+    min-height: 60px;
+}
+
+.testSec > section:last-child{
+/* border: solid pink; */
+}
+
+
+@media(max-width: 575px){
+    .testInput{
+        width: 100% !important;
+    }
+
+    .nameInputGroup,
+    .nameContainerSM{
+        display: none !important;
+    }
+
+    .reCAPTCHAStyles{
+        transform: scale(.7);
+    }
+
+    .errorMsgTxt{
+        font-size: 8px !important;
+    }
+}
+
+
+

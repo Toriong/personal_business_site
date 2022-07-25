@@ -3,6 +3,7 @@ import { BusinessFormContext } from '../../providers/Providers'
 import Button from 'react-bootstrap/Button';
 import { BsFillCircleFill, BsCircle } from "react-icons/bs";
 import '../../css/contact/contactPg.css'
+import ContactForm from './ContactForm';
 
 const ContactPg = () => {
     const { isGeneralEnquiryOn, setIsGeneralEnquiryOn } = useContext(BusinessFormContext);
@@ -30,6 +31,9 @@ const ContactPg = () => {
                         {isGeneralEnquiryOn ? <BsFillCircleFill /> : <BsCircle />}
                     </button>
                 </section>
+            </section>
+            <section className='container-fluid contactFormSec pt-5 d-flex d-lg-block justify-content-center justify-content-lg-start'>
+                <ContactForm />
             </section>
         </div>
     )
