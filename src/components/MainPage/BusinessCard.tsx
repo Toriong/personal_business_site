@@ -119,7 +119,7 @@ const BusinessCard = () => {
                                     </Button>
                                 </div>
                             </div>
-                            <div className='row d-none d-xl-flex businessCalBtnContainer'>
+                            <div className='row d-none businessCalBtnContainer'>
                                 <div className='col-12 d-flex justify-content-center align-items-center'>
                                     <Button
                                         variant='primary'
@@ -132,7 +132,7 @@ const BusinessCard = () => {
                         </section>
                     </div>
                 </section>
-                <section className='container-fluid d-block d-xl-none businessCallBtnContainer'>
+                <section className='container-fluid businessCallBtnContainer onSmallerScreen'>
                     <section className='row'>
                         <section className='col-12 d-flex justify-content-center align-items-center'>
                             <Button

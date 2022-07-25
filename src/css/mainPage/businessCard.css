@@ -84,7 +84,26 @@
 
 
 
-@media(min-width: 768px) and (max-width: 1200px) {
+@media(max-width: 1350px){
+    .businessCallBtnContainer.onSmallerScreen{
+        display: block !important;
+    }
+}
+
+
+@media(min-width: 1351px){
+.businessCallBtnContainer.onSmallerScreen{
+    display: none !important;
+}
+
+    .businessCalBtnContainer{
+        display: flex !important;
+    }
+}
+
+
+
+@media(min-width: 768px) and (max-width: 1350px) {
     .meImgContainer {
         height: 300px !important
     }

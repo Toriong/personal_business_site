@@ -6,13 +6,13 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { businessEmail, phoneNum } from '../contactVals';
 import { AiFillLinkedin } from "react-icons/ai";
 import '../css/navBar.css';
+import LinkedInBtn from '../buttons/LinkedInBtn';
+import TwitterBtn from '../buttons/TwitterBtn';
+import MyWebSiteBtn from '../buttons/MyWebSiteBtn';
 
 
 const Navbar = () => {
     const [isDropDownMenuOn, setIsDropDownMenuOn] = useState(false);
-
-
-
 
     const handleBtnClick = () => { setIsDropDownMenuOn(!isDropDownMenuOn) }
 
@@ -28,12 +28,17 @@ const Navbar = () => {
                                 <span className='text-nowrap display-inline-block w-50 clickAble txt'><MdEmail />: {businessEmail}</span>
                             </div>
                             <div className='text-nowrap d-flex justify-content-evenly mt-2 socialMediaAndLocation'>
-                                <span className='text-nowrap display-inline-block w-100 socialMedia onNavbar'>
-                                    Links:
-                                    <a href="#" className='ms-1'>
+                                <div>
+                                    <span>Links: </span>
+                                </div>
+                                <div className='d-flex w-100 align-items-center justify-content-start pt-1 ps-1'>
+                                    {/* <a href="#" className='ms-1'>
                                         <AiFillLinkedin className='icon' />
-                                    </a>
-                                </span>
+                                    </a> */}
+                                    <LinkedInBtn isOnNavbar />
+                                    <TwitterBtn isOnNavbar />
+                                    <MyWebSiteBtn isOnNavbar />
+                                </div>
                                 <span className='text-nowrap display-inline-block w-50 clickAble txt'></span>
                             </div>
                         </div>
@@ -96,13 +101,13 @@ const Navbar = () => {
                                                 </span>
                                             </div>
                                             <div className='text-nowrap d-flex justify-content-center mt-2'>
-                                                <span className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile'>
-                                                    <i>
+                                                <span className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile d-flex'>
+                                                    <i className='me-1'>
                                                         Links:
                                                     </i>
-                                                    <a href="#" className='ms-1'>
-                                                        <AiFillLinkedin className='icon' />
-                                                    </a>
+                                                    <LinkedInBtn isOnNavbar />
+                                                    <TwitterBtn isOnNavbar />
+                                                    <MyWebSiteBtn isOnNavbar />
                                                 </span>
                                             </div>
                                         </div>

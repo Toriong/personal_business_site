@@ -22,3 +22,7 @@ export interface ReviewsProp {
 export interface BookACallBtnProp {
     isOnBusinessCard?: boolean
 }
+
+export interface BtnProps {
+    isOnNavbar?: boolean
+}
