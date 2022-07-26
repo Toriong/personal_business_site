@@ -1,0 +1,18 @@
+[
+    {
+        "imgs": 
+        [
+            "`${window.location.origin}/Product1Img1.png`" , 
+            "`${window.location.origin}/Product1Img2.png`", 
+            "`${window.location.origin}/Product1Img3.png`"
+        ],
+        "title": "Auto Repair Shop Site",
+        "texts": 
+        [
+            "Are you an auto shop owner?", 
+            "Don't have a website?", 
+            "Tired of constant phone calls?", 
+            "I built a website just for YOU then! Digital communication is essential for any 21st-century business, and I can assure you, once you adopt my website, with its easy-to-use navigation and emailing feature, your business will have a more significant impact, thus producing a much more pleased customer based."
+        ]
+    }
+]
