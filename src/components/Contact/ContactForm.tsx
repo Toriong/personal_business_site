@@ -78,6 +78,7 @@ const ContactForm = () => {
     const [isFirstNameError, setIsFirstNameError] = useState(false);
     const [isLastNameError, setIsLastNameError] = useState(false);
     const [isEmailError, setIsEmailError] = useState(false);
+    const [isTimeAvailabilityError, setIsTimeAvailabilityError] = useState(false);
     const [didMsgError, setDidMsgError] = useState(false);
 
     const handleOnSubmit = (event: MouseEvent<HTMLButtonElement>) => {
@@ -93,7 +94,22 @@ const ContactForm = () => {
     }
 
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const { value, name } = event.currentTarget;
+        const isOnEmail = name === 'email';
+        const isOnFirstName = name === 'firstName';
+        const isOnLastName = name === 'lastName';
+        const isOnMessageInput = name === 'message';
+        const isOnTimeAvailability = name === 'timeAvailability';
 
+        if (isOnEmail) {
+            (value === '') ? setIsEmailInvalid(false) : setIsEmailInvalid(getIsEmailInvalid(value));
+            setIsEmailError(false);
+        };
+        isOnLastName && setIsLastNameError(false);
+        isOnFirstName && setIsFirstNameError(false);
+        isOnMessageInput && setDidMsgError(false);
+        isOnTimeAvailability && setIsTimeAvailabilityError(false);
+        setForm(form => { return { ...form, [name]: value } });;
     };
 
 
@@ -188,16 +204,23 @@ const ContactForm = () => {
                 />
             </Group>
             {!isGeneralEnquiryOn &&
-                <Group className="mb-3" controlId="formBasicPassword">
-                    <Label className='fw-bold'>*Time Availability</Label>
-                    <Control
-                        type="text"
-                        placeholder="Example: Mon-Fri, 10am-3pm"
-                        name='timeAvailability'
-                        onChange={event => { handleOnChange(event as any) }}
-                        value={timeAvailability}
-                    />
-                </Group>}
+                <>
+                    <Group className="mb-3" controlId="formBasicPassword">
+                        <Label className='fw-bold'>*Time Availability</Label>
+                        <Control
+                            type="text"
+                            placeholder="Example: Mon-Fri, 10am-3pm"
+                            name='timeAvailability'
+                            style={{ border: isTimeAvailabilityError ? 'solid red .5px' : '1px solid #ced4da' }}
+                            onChange={event => { handleOnChange(event as any) }}
+                            value={timeAvailability}
+                        />
+                    </Group>
+                    <Text className="pl-5 text-danger" style={{ fontSize: '8px', height: '20px' }}>
+                        {isTimeAvailabilityError && '*This field is required. Please enter your message.'}
+                    </Text>
+                </>
+            }
             <Group className='mb-3' controlId='titleEmailInput'>
                 <Label className='fw-bold'>Title of email</Label>
                 <Control

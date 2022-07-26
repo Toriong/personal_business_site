@@ -37,6 +37,17 @@ export interface RobotTestObj {
     userInput?: string
 }
 
+export interface ContactFormState {
+    firstName: string
+    lastName?: string
+    email: string
+    phoneNum?: string
+    subject?: string
+    message: string
+    timeAvailability?: string
+}
+
+
 export interface RobotTestProps {
     setTest: Function
     test: RobotTestObj
