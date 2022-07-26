@@ -3,6 +3,7 @@
 export interface ProductTemplateProps {
     imgs: Array<string>
     descriptionTexts: Array<string>
+    isOnProductsPg?: boolean
 }
 
 export interface ProductTitleProps {
@@ -21,6 +22,8 @@ export interface ReviewsProp {
 
 export interface BookACallBtnProp {
     isOnBusinessCard?: boolean
+    isOnProductsPg?: boolean
+    isPulseOn?: boolean
 }
 
 export interface BtnProps {

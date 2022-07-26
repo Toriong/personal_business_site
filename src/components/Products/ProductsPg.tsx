@@ -18,13 +18,13 @@ import BookACall from '../../buttons/BookACall';
 const ProductsPg = () => {
 
   return (
-    <div className='container-fluid productPg'>
+    <div className='container-fluid productPg noMargin noPadding'>
       <section className='row noMargin pt-5 pb-4'>
         <section className='col-12 d-flex justify-content-center align-items-center'>
           <h3 className='display-4 text-center'>MY PRODUCTS</h3>
         </section>
       </section>
-      <section className='row noMargin pb-5 border-bottom'>
+      <section className='row noMargin pb-5 border-bottom bg-light'>
         <section className='col-12 d-flex flex-column justify-content-center'>
           {ProductDescription.map(product => {
             const { texts, title, imgs } = product;
@@ -33,7 +33,7 @@ const ProductsPg = () => {
             return (
               <>
                 <ProductTitle title={title} />
-                <ProductTemplate imgs={_imgs} descriptionTexts={texts} />
+                <ProductTemplate imgs={_imgs} descriptionTexts={texts} isOnProductsPg />
               </>
             )
           }
@@ -50,7 +50,7 @@ const ProductsPg = () => {
           <span className='display-6 text-center'>Do you have an idea? If it can programmed, shoot me a message!</span>
         </section>
         <section className='col-12 d-flex justify-content-center pt-5 pb-5'>
-          <BookACall />
+          <BookACall isPulseOn />
         </section>
       </section>
     </div>

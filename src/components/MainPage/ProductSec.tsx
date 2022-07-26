@@ -13,7 +13,9 @@ const ProductSec = () => {
         <section className='productSec bg-light'>
             <section className='row noMargin noPadding pt-5'>
                 <div className='col-12 d-flex justify-content-center align-items-center'>
-                    <h1 className='display-4'>MY PRODUCTS</h1>
+                    <h1 className='display-4'>
+                        MY PRODUCTS
+                    </h1>
                 </div>
             </section>
             {/* product one */}
