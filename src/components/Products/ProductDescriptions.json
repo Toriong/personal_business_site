@@ -2,9 +2,9 @@
     {
         "imgs": 
         [
-            "`${window.location.origin}/Product1Img1.png`" , 
-            "`${window.location.origin}/Product1Img2.png`", 
-            "`${window.location.origin}/Product1Img3.png`"
+            "/Product1Img1.png" , 
+            "/Product1Img2.png", 
+            "/Product1Img3.png"
         ],
         "title": "Auto Repair Shop Site",
         "texts": 
