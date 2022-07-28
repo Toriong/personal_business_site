@@ -11,8 +11,8 @@ body {
   text-decoration: none;
 }
 
+
 .noBtnStyles{
-  /* background: transparent !important; */
   background: none !important;
 	border: none !important;
 }

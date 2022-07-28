@@ -10,10 +10,20 @@ export interface ProductTemplateProps extends ProductTitleProps {
     productNumString?: string
 }
 
+export interface useGetViewPortHookReturnVal {
+    widthPixels: number
+}
+
 export interface ProductDesigns {
     mobileImgs: Array<string>
     desktopImgs: Array<string>
     tabletImgs: Array<string>
+}
+
+export interface DesignType {
+    isMobile?: boolean
+    isTablet?: boolean
+    isDesktop?: boolean
 }
 
 export interface ProductsImgs {

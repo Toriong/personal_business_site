@@ -1,5 +1,5 @@
 import React, { FC, MouseEvent, useContext, useEffect } from 'react'
-import { ProductDesigns, ProductsImgs, ProductTemplateProps } from '../../../interfaces/interfaces'
+import { DesignType, ProductDesigns, ProductsImgs, ProductTemplateProps } from '../../../interfaces/interfaces'
 import Button from 'react-bootstrap/Button';
 import '../../../css/products/productTemplate.css'
 import BookACall from '../../../buttons/BookACall';
@@ -30,9 +30,22 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
         return product1;
     }
 
-    const addUrlToImgs = (imgs: Array<string>): Array<string> => {
+    const addUrlToImgs = (imgs: Array<string>, designType: DesignType): Array<string> => {
         const appUrl = window.location.origin;
-        return imgs.map(img => `${appUrl}/${img}`);
+        const { isDesktop, isMobile, isTablet } = designType
+        if (productNumString === 'product2') {
+
+        }
+
+        if (isDesktop) {
+            return imgs.map(img => `${appUrl}/product1Desktop/${img}`);
+        }
+
+        if (isTablet) {
+            return imgs.map(img => `${appUrl}/product1Tablet/${img}`);
+        }
+
+        return imgs.map(img => `${appUrl}/product1Mobile/${img}`);
     }
 
 
@@ -48,10 +61,10 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
             const designs = getDesignImgs();
             const { desktopImgs, tabletImgs, mobileImgs } = designs;
             let _imgs: any = undefined
-            _imgs = isMobileSelected ? addUrlToImgs(mobileImgs) : _imgs
+            _imgs = isMobileSelected ? addUrlToImgs(mobileImgs, { isMobile: true }) : _imgs
             if (!_imgs) {
-                _imgs = isTabletSelected ? addUrlToImgs(tabletImgs) : _imgs
-                _imgs = isDesktopSelected ? addUrlToImgs(desktopImgs) : _imgs
+                _imgs = isTabletSelected ? addUrlToImgs(tabletImgs, { isTablet: true }) : _imgs
+                _imgs = isDesktopSelected ? addUrlToImgs(desktopImgs, { isDesktop: true }) : _imgs
             }
             setSelectedProduct({ ..._selectedProduct, imgs: _imgs });
         };

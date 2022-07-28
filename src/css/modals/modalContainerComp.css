@@ -1,0 +1,25 @@
+
+.mobileDesignsMobile{
+    min-height: 473.406px !important;
+}
+
+.otherDesigns,
+.mobileImg,
+.otherDesignsMobile{
+    max-height: 535.055px !important;
+}
+
+
+@media(max-width: 767px){
+    .mobileDesignsMobile{
+        width: 186px;
+    }
+
+    .otherDesignsMobile{
+        min-width: 248px !important;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1023px){
+
+}

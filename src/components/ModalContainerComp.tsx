@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
+import useGetViewPortWidth from '../customHooks/useGetViewPortWidth';
 import { ModalContext } from '../providers/Providers';
+import '../css/modals/modalContainerComp.css'
 
 const { Header, Title, Body } = Modal
 
@@ -16,34 +18,40 @@ const { Header, Title, Body } = Modal
 // the first img is displayed onto the modal
 
 
-// GOAL: insert all of the images into the selectedProduct.imgs based on what the design type that the user clicked on 
-// all of the imgs are attained for the specific design type
-// get all of the images based on the design type
-// get the design type 
-// the pictures modal is displayed onto the DOM 
-// the user clicks on one of the design types buttons
+// BRAIN DUMP NOTES:
+
+
 
 const ModalContainerComp = () => {
     const { isPicturesModalOn, setIsPicturesModalOn, selectedProduct } = useContext(ModalContext);
+    const { widthPixels } = useGetViewPortWidth()
     const [index, setIndex] = useState(0)
 
     const { productName, design, imgs } = selectedProduct;
 
     const handleOnHide = () => { setIsPicturesModalOn(false) };
 
+    let imgClassName = (design === 'mobile') ? 'h-75 shadow mobileImg' : 'otherDesigns h-75 shadow'
+
+    if (widthPixels <= 767) {
+        imgClassName = (design === 'mobile') ? 'h-75 shadow mobileImg' : 'h-75 otherDesignsMobile shadow'
+    }
+
+
+
+
+
+
     return (
         <>
-            <Modal show={isPicturesModalOn} fullscreen={true} onHide={handleOnHide}>
+            <Modal show={isPicturesModalOn} fullscreen={true} onHide={handleOnHide} className=''>
                 <Header closeButton>
                     <Title className='text-center w-100'>{`${productName} (${design})`}</Title>
                 </Header>
-                <Body className='d-flex flex-column justify-content-center align-items-center'>
-                    <section className='d-flex justify-content-center align-items-center'>
+                <Body className='d-flex flex-column w-100'>
+                    <section className='d-flex justify-content-center h-100'>
                         {/* show pictures here */}
-                        {imgs?.length && <img src={imgs[0]} alt='product_img' className='w-50 w-75' />}
-                    </section>
-                    <section>
-
+                        {imgs?.length && <img src={imgs[0]} alt='product_img' className={imgClassName} />}
                     </section>
                 </Body>
             </Modal>
