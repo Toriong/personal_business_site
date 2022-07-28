@@ -27,13 +27,13 @@ const ProductsPg = () => {
       <section className='row noMargin pb-5 border-bottom bg-light'>
         <section className='col-12 d-flex flex-column justify-content-center'>
           {ProductDescription.map(product => {
-            const { texts, title, imgs } = product;
+            const { texts, title, imgs, productNumString } = product;
             const _imgs = imgs.map((img: string) => `${window.location.origin}${img}`)
             console.log('_imgs: ', _imgs)
             return (
               <>
                 <ProductTitle title={title} />
-                <ProductTemplate imgs={_imgs} descriptionTexts={texts} isOnProductsPg />
+                <ProductTemplate imgs={_imgs} descriptionTexts={texts} isOnProductsPg productNumString={productNumString} title={title} />
               </>
             )
           }

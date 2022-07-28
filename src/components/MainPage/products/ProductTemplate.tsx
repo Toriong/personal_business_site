@@ -1,23 +1,68 @@
-import React, { FC } from 'react'
-import { ProductTemplateProps } from '../../../interfaces/interfaces'
+import React, { FC, MouseEvent, useContext, useEffect } from 'react'
+import { ProductDesigns, ProductsImgs, ProductTemplateProps } from '../../../interfaces/interfaces'
 import Button from 'react-bootstrap/Button';
 import '../../../css/products/productTemplate.css'
 import BookACall from '../../../buttons/BookACall';
+import { ModalContext } from '../../../providers/Providers';
+import { SelectedProduct } from '../../../interfaces/interfaces';
+import productsImgs from '../../../data/productImgs.json';
 
 // BRAIN DUMP:
 // if the user is on the product page, show the following buttons: mobile, tablet, desktop
 
-// if any of the buttons are pressed above, then show their corresponding photos in a modal
+// GOAL: get the string that will act as the selector for the json data that has all of the images of the productsImgs 
 
-// GOAL #1:
-// show the version type for each product when the user is on the products page
 
-// GOAL #2: 
-// when the user presses on the version type for the product, get their corresponding photos show them onto a modal
 
-const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isOnProductsPg }) => {
+const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isOnProductsPg, title, productNumString }) => {
+    const { setSelectedProduct, selectedProduct, setIsPicturesModalOn, isPicturesModalOn } = useContext(ModalContext)
     const [img1, img2, img3] = imgs;
     const [text1, text2, text3, text4] = descriptionTexts
+
+
+    const getDesignImgs = (productNumString?: string): ProductDesigns => {
+        const { product1 } = productsImgs;
+
+        if (productNumString === 'product2') {
+            // return product2 here
+        };
+
+        return product1;
+    }
+
+    const addUrlToImgs = (imgs: Array<string>): Array<string> => {
+        const appUrl = window.location.origin;
+        return imgs.map(img => `${appUrl}/${img}`);
+    }
+
+
+
+    const handleBtnClick = (event: MouseEvent<HTMLButtonElement>) => {
+        const { name } = event.currentTarget;
+        let _selectedProduct: SelectedProduct = { productName: title, design: name };
+        const isMobileSelected = name === 'mobile';
+        const isTabletSelected = name === 'tablet';
+        const isDesktopSelected = name === 'desktop';
+
+        if (productNumString === 'product1') {
+            const designs = getDesignImgs();
+            const { desktopImgs, tabletImgs, mobileImgs } = designs;
+            let _imgs: any = undefined
+            _imgs = isMobileSelected ? addUrlToImgs(mobileImgs) : _imgs
+            if (!_imgs) {
+                _imgs = isTabletSelected ? addUrlToImgs(tabletImgs) : _imgs
+                _imgs = isDesktopSelected ? addUrlToImgs(desktopImgs) : _imgs
+            }
+            setSelectedProduct({ ..._selectedProduct, imgs: _imgs });
+        };
+
+        setIsPicturesModalOn(true);
+    };
+
+    useEffect(() => {
+        console.log('selectedProduct: ', selectedProduct);
+        console.log('isPicturesModalOn: ', isPicturesModalOn)
+    })
 
     return (
         <section className='row noMargin noPadding pt-3 d-flex flex-column flex-lg-row'>
@@ -50,13 +95,13 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
                                 <h4 className='text-muted fst-italic'>Designs:</h4>
                             </section>
                             <section>
-                                <Button variant='secondary'>
+                                <Button name='mobile' variant='secondary' onClick={event => { handleBtnClick(event) }}>
                                     Mobile
                                 </Button>
-                                <Button variant='secondary'>
+                                <Button name='tablet' variant='secondary' onClick={event => { handleBtnClick(event) }}>
                                     Tablet
                                 </Button>
-                                <Button variant='secondary'>
+                                <Button name='desktop' variant='secondary' onClick={event => { handleBtnClick(event) }}>
                                     Desktop
                                 </Button>
                             </section>

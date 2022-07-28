@@ -13,7 +13,7 @@ const BookACall: FC<BookACallBtnProp> = ({ isOnBusinessCard, isOnProductsPg, isP
         {!isOnProductsPg ?
             isOnBusinessCard ? 'SET UP A BUSINESS CALL!' : 'CONTACT ME!'
             :
-            "Do you want to this product? Let's set up a business call!"
+            "Do you want to use this product? Let's set up a business call!"
         }
     </Button>
 }

@@ -1,14 +1,33 @@
 
+export interface ProductTitleProps {
+    title?: string
+}
 
-export interface ProductTemplateProps {
+export interface ProductTemplateProps extends ProductTitleProps {
     imgs: Array<string>
     descriptionTexts: Array<string>
     isOnProductsPg?: boolean
+    productNumString?: string
 }
 
-export interface ProductTitleProps {
-    title: string
+export interface ProductDesigns {
+    mobileImgs: Array<string>
+    desktopImgs: Array<string>
+    tabletImgs: Array<string>
 }
+
+export interface ProductsImgs {
+    product1: ProductDesigns
+}
+
+export interface SelectedProduct {
+    productName?: string
+    design?: string
+    imgs?: Array<string>
+    productNumString?: string
+}
+
+
 
 export interface Review {
     name: string
