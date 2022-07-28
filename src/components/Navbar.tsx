@@ -32,9 +32,6 @@ const Navbar = () => {
                                     <span>Links: </span>
                                 </div>
                                 <div className='d-flex w-100 align-items-center justify-content-start pt-1 ps-1'>
-                                    {/* <a href="#" className='ms-1'>
-                                        <AiFillLinkedin className='icon' />
-                                    </a> */}
                                     <LinkedInBtn isOnNavbar />
                                     <TwitterBtn isOnNavbar />
                                     <MyWebSiteBtn isOnNavbar />
@@ -59,7 +56,7 @@ const Navbar = () => {
                                     <a className="nav-link linksOnNavbar text-secondary" href="/products">PRODUCTS</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link linksOnNavbar text-secondary" href="/contracts">BUSINESS INFO</a>
+                                    <a className="nav-link linksOnNavbar text-secondary" href="/business">BUSINESS INFO</a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link linksOnNavbar text-secondary" href="/contact">CONTACT</a>
@@ -82,8 +79,8 @@ const Navbar = () => {
                                     >
                                         <div className='w-100 dropDownNavContainer'>
                                             <a className="nav-link text-muted text-start" href="/">HOME</a>
-                                            <a className="nav-link text-muted text-start" href="/repairs">PRODUCTS</a>
-                                            <a className="nav-link text-muted text-start" href="/tires">BUSINESS INFO</a>
+                                            <a className="nav-link text-muted text-start" href="/products">PRODUCTS</a>
+                                            <a className="nav-link text-muted text-start" href="/business">BUSINESS INFO</a>
                                             <a className="nav-link text-muted text-start" href="/contact">CONTACT</a>
                                             <div className='text-nowrap d-flex justify-content-center mt-2'>
                                                 <span className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile'>

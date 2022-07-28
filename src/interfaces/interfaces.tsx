@@ -10,6 +10,14 @@ export interface ProductTemplateProps extends ProductTitleProps {
     productNumString?: string
 }
 
+export interface IsFormDataValidReturnVal {
+    isValid?: boolean,
+    didFirstNameError?: boolean
+    didEmailError?: boolean
+    didMsgError?: boolean
+    didLastNameError?: boolean
+    didTimeAvailError?: boolean
+}
 export interface useGetViewPortHookReturnVal {
     widthPixels: number
 }

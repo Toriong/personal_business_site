@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent, MouseEvent, useRef, useContext, useMemo } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { RobotTestObj, TestObj } from '../../interfaces/interfaces';
+import { IsFormDataValidReturnVal, RobotTestObj, TestObj } from '../../interfaces/interfaces';
 import RobotTest from './RobotTest';
 import { BusinessFormContext } from '../../providers/Providers'
 
@@ -22,6 +22,10 @@ const robotTestData = [
     }
 ]
 
+// GOAL: when the user presses the submit button do the following:
+// send the email to your freelancing email
+// send a confirmation email to the client user
+
 
 const ContactForm = () => {
     // const { setIsSendingEmailModalOn, setIsResultsModalForSubmitOn, setModalTxt, setModalHeader, isSendingEmailModalOn } = useContext(ModalContext)
@@ -32,7 +36,13 @@ const ContactForm = () => {
     };
     const _currentTest = useMemo(() => getTest(robotTestData), [])
     const [isEmailInvalid, setIsEmailInvalid] = useState(false);
-    const [didTestFail, setDidTestFail] = useState(false)
+    const [didTestFail, setDidTestFail] = useState(false);
+    const [isFirstNameError, setIsFirstNameError] = useState(false);
+    const [isLastNameError, setIsLastNameError] = useState(false);
+    const [isEmailError, setIsEmailError] = useState(false);
+    const [isTimeAvailabilityError, setIsTimeAvailabilityError] = useState(false);
+    const [didMsgError, setDidMsgError] = useState(false);
+    // if the user is setting a business call, then check if the there is any input in the timeAvailability field 
     const formDefaultVal = {
         firstName: '',
         lastName: '',
@@ -75,14 +85,47 @@ const ContactForm = () => {
         return isValid;
     };
 
-    const [isFirstNameError, setIsFirstNameError] = useState(false);
-    const [isLastNameError, setIsLastNameError] = useState(false);
-    const [isEmailError, setIsEmailError] = useState(false);
-    const [isTimeAvailabilityError, setIsTimeAvailabilityError] = useState(false);
-    const [didMsgError, setDidMsgError] = useState(false);
+
+
+    const getIsFormDataValid = (): IsFormDataValidReturnVal => {
+        const { phoneNum, subject, ..._form } = form;
+        const isInputFilled = Object.values(_form).every(val => val !== '');
+        const isEmailInvalid = getIsEmailInvalid(_form.email);
+        if (isInputFilled && !isEmailInvalid) {
+            return { isValid: true };
+        }
+        const { firstName, email, message, lastName, timeAvailability } = _form;
+        const didFirstNameError = firstName === '';
+        const didLastNameError = lastName === '';
+        const didEmailError = email === '';
+        (!didEmailError && isEmailInvalid) && setIsEmailInvalid(true);
+        const didMsgError = message === '';
+        const defaultReturnVal = { didFirstNameError, didEmailError, didMsgError, didLastNameError };
+
+        return !isGeneralEnquiryOn ? { ...defaultReturnVal, didTimeAvailError: timeAvailability === '' } : defaultReturnVal;
+    }
 
     const handleOnSubmit = (event: MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        const { currentTest, userInput } = test;
+        if (userInput !== currentTest.chars) {
+            setDidTestFail(true);
+            alert('Please pass the test to confirm that you are not a robot.')
+            return;
+        }
 
+        const { didFirstNameError, didEmailError, didMsgError, isValid, didLastNameError, didTimeAvailError } = getIsFormDataValid();
+
+        if (isValid) {
+
+        };
+
+        didFirstNameError && setIsFirstNameError(true);
+        didEmailError && setIsEmailError(true);
+        didMsgError && setDidMsgError(true);
+        didLastNameError && setIsLastNameError(true);
+        didTimeAvailError && setIsTimeAvailabilityError(true);
+        alert('Some of your entries are invalid. Please check your entries.')
     };
 
 
@@ -217,7 +260,7 @@ const ContactForm = () => {
                         />
                     </Group>
                     <Text className="pl-5 text-danger" style={{ fontSize: '8px', height: '20px' }}>
-                        {isTimeAvailabilityError && '*This field is required. Please enter your message.'}
+                        {isTimeAvailabilityError && '*This field is required. Please enter your time availability.'}
                     </Text>
                 </>
             }

@@ -6,20 +6,12 @@ import '../../css/productPg/productPg.css'
 import BookACall from '../../buttons/BookACall';
 
 
-// BRAIN DUMP:
-// create the product page
-// the first section will contain the header for the page: 'MY PRODUCTS'
-// have all of the products be mapped onto the dom in the second section
-// at the last section have the following: 'More products are on the way!'
-// Do you want me to build you something? Shoot me a message! (with a a contact me button below)
-
-
 
 const ProductsPg = () => {
 
   return (
     <div className='container-fluid productPg noMargin noPadding'>
-      <section className='row noMargin pt-5 pb-4'>
+      <section className='row noMargin pt-4 pb-4'>
         <section className='col-12 d-flex justify-content-center align-items-center'>
           <h3 className='display-4 text-center'>MY PRODUCTS</h3>
         </section>

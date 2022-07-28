@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BusinessInfoPg from './components/BusinessInfo/BusinessInfoPg';
 import ContactPg from './components/Contact/ContactPg';
 import Footer from './components/Footer';
 import MainPage from './components/MainPage/MainPage';
@@ -19,6 +20,7 @@ const GabesBusinessSite = () => {
             <Route path='/' element={<MainPage />} />
             <Route path='/contact' element={<ContactPg />} />
             <Route path='/products' element={<ProductsPg />} />
+            <Route path='/business' element={<BusinessInfoPg />} />
           </Routes>
           <Footer />
         </ModalProvider>
