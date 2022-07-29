@@ -16,7 +16,7 @@
     }
 
     .otherDesignsMobile{
-        min-width: 248px !important;
+        max-width: 270px !important;
     }
 }
 
