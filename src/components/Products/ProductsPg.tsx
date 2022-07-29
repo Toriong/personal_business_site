@@ -21,7 +21,6 @@ const ProductsPg = () => {
           {ProductDescription.map(product => {
             const { texts, title, imgs, productNumString } = product;
             const _imgs = imgs.map((img: string) => `${window.location.origin}${img}`)
-            console.log('_imgs: ', _imgs)
             return (
               <>
                 <ProductTitle title={title} />

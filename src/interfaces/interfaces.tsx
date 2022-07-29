@@ -1,13 +1,23 @@
 
-export interface ProductTitleProps {
-    title?: string
+
+export interface IsOnProductPage {
+    isOnProductsPg?: boolean
 }
 
-export interface ProductTemplateProps extends ProductTitleProps {
+export interface ProductTitleProps extends IsOnProductPage {
+    title?: string,
+
+}
+
+export interface ProductTemplateProps extends ProductTitleProps, IsOnProductPage {
     imgs: Array<string>
     descriptionTexts: Array<string>
-    isOnProductsPg?: boolean
     productNumString?: string
+}
+
+export interface ModalResponseTxt {
+    header: string,
+    body: string
 }
 
 export interface IsFormDataValidReturnVal {

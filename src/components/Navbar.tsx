@@ -16,6 +16,12 @@ const Navbar = () => {
 
     const handleBtnClick = () => { setIsDropDownMenuOn(!isDropDownMenuOn) }
 
+    const handleEmailClick = () => {
+        window.location.href = `mailto:${businessEmail}?subject=Subject&body=message%20goes%20here`;
+    }
+
+    const handlePhoneNumClick = () => { window.open(`tel:+${phoneNum}`) }
+
 
     return (
         <div className='unfixed-wrapper'>
@@ -24,8 +30,8 @@ const Navbar = () => {
                     <div className='position-relative contactContainer d-flex row justify-content-end pt-2 noMargin'>
                         <div className='col-lg-1 col-md-3 col-sm-5 flex-column contactNavbar d-none d-md-flex position-absolute'>
                             <div className='d-flex justify-content-evenly contactInfo onNavbar '>
-                                <span className='text-nowrap display-inline-block w-50 clickAble txt'><AiTwotonePhone />: #{phoneNum}</span>
-                                <span className='text-nowrap display-inline-block w-50 clickAble txt'><MdEmail />: {businessEmail}</span>
+                                <span className='text-nowrap display-inline-block w-50 clickAble txt' style={{ cursor: 'pointer' }} onClick={handlePhoneNumClick}><AiTwotonePhone />: #{phoneNum}</span>
+                                <span className='text-nowrap display-inline-block w-50 clickAble txt' style={{ cursor: 'pointer' }} onClick={handleEmailClick}><MdEmail />: {businessEmail}</span>
                             </div>
                             <div className='text-nowrap d-flex justify-content-evenly mt-2 socialMediaAndLocation'>
                                 <div>
@@ -83,12 +89,12 @@ const Navbar = () => {
                                             <a className="nav-link text-muted text-start" href="/business">BUSINESS INFO</a>
                                             <a className="nav-link text-muted text-start" href="/contact">CONTACT</a>
                                             <div className='text-nowrap d-flex justify-content-center mt-2'>
-                                                <span className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile'>
+                                                <span style={{ cursor: 'pointer' }} className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile' onClick={handleEmailClick}>
                                                     <MdEmail /> gtorion97freelancing@gmail.com
                                                 </span>
                                             </div>
                                             <div className='text-nowrap d-flex justify-content-center mt-2'>
-                                                <span className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile'>
+                                                <span style={{ cursor: 'pointer' }} className='text-nowrap socialMedia text-muted w-75 onNavbar contactTxtOnMobile' onClick={handlePhoneNumClick}>
                                                     <AiTwotonePhone />
                                                     #425-219-7437
                                                 </span>

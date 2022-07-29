@@ -3,7 +3,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { IsFormDataValidReturnVal, RobotTestObj, TestObj } from '../../interfaces/interfaces';
 import RobotTest from './RobotTest';
-import { BusinessFormContext } from '../../providers/Providers'
+import { BusinessFormContext, ModalContext } from '../../providers/Providers';
+import emailjs from 'emailjs-com';
 
 const { Group, Control, Label, Text } = Form;
 
@@ -28,8 +29,8 @@ const robotTestData = [
 
 
 const ContactForm = () => {
-    // const { setIsSendingEmailModalOn, setIsResultsModalForSubmitOn, setModalTxt, setModalHeader, isSendingEmailModalOn } = useContext(ModalContext)
-    const { isGeneralEnquiryOn } = useContext(BusinessFormContext)
+    const { isGeneralEnquiryOn } = useContext(BusinessFormContext);
+    const { setEmailResponseTxt, setIsEmailResponseModalOn } = useContext(ModalContext);
     const getTest = (tests: Array<TestObj>): TestObj => {
         const randomIndex = Math.floor(Math.random() * tests.length);
         return robotTestData[randomIndex]
@@ -42,6 +43,7 @@ const ContactForm = () => {
     const [isEmailError, setIsEmailError] = useState(false);
     const [isTimeAvailabilityError, setIsTimeAvailabilityError] = useState(false);
     const [didMsgError, setDidMsgError] = useState(false);
+    const [isSendingEmail, setIsSendingEmail] = useState(false);
     // if the user is setting a business call, then check if the there is any input in the timeAvailability field 
     const formDefaultVal = {
         firstName: '',
@@ -55,6 +57,7 @@ const ContactForm = () => {
     const [form, setForm] = useState(formDefaultVal);
     const [test, setTest] = useState<RobotTestObj>({ currentTest: _currentTest, userInput: "" });
     const { firstName, lastName, email, phoneNum, subject, message, timeAvailability } = form;
+
 
 
 
@@ -117,7 +120,47 @@ const ContactForm = () => {
         const { didFirstNameError, didEmailError, didMsgError, isValid, didLastNameError, didTimeAvailError } = getIsFormDataValid();
 
         if (isValid) {
-
+            setIsSendingEmail(true);
+            let timer = setTimeout(() => {
+                alert('Looks like it is taking longer than usually to send your email. You can refresh the page and try again.')
+            }, 15000)
+            const form = {
+                firstName: firstName,
+                lastName: lastName,
+                message: message,
+                senderEmail: email,
+            }
+            emailjs.send("service_vmojwel", "template_flvjgvf", form, 'wpxxJxNIFAv-TF5En')
+                .then(response => {
+                    const { status, text } = response;
+                    if (status === 200) {
+                        console.log('text: ', text)
+                        setEmailResponseTxt({
+                            header: "Email received!",
+                            body: "Thanks for reach out! I have received your message! Please check your email for confirmation. I'll be in contact with you ASAP!"
+                        })
+                    }
+                    setForm(formDefaultVal)
+                    clearTimeout(timer)
+                })
+                .catch(error => {
+                    if (error) {
+                        setEmailResponseTxt({
+                            header: 'ERROR!',
+                            body: "Sorry, looks like an error has occurred. I was unable to receive your message. Please refresh the page and try again."
+                        })
+                        console.error('An error has occurred: ', error)
+                    }
+                    setForm(formDefaultVal)
+                    clearTimeout(timer)
+                })
+                .finally(() => {
+                    setIsEmailResponseModalOn(true);
+                    setIsSendingEmail(false);
+                    const availableTests = robotTestData.filter(({ name }) => name !== test.currentTest.name);
+                    setTest({ currentTest: getTest(availableTests), userInput: "" });
+                })
+            return;
         };
 
         didFirstNameError && setIsFirstNameError(true);
@@ -128,13 +171,6 @@ const ContactForm = () => {
         alert('Some of your entries are invalid. Please check your entries.')
     };
 
-
-
-    const presentResponseModal = (headerTxt: string, bodyTxt: string) => {
-        // setModalHeader(headerTxt);
-        // setModalTxt(bodyTxt);
-        // setIsResultsModalForSubmitOn(true);
-    }
 
     const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { value, name } = event.currentTarget;
@@ -295,10 +331,9 @@ const ContactForm = () => {
                     variant="primary"
                     type="submit"
                     className='submitBtn w-25'
-                    // disabled={isSendingEmailModalOn}
+                    disabled={isSendingEmail}
                     onClick={event => { handleOnSubmit(event) }}>
-                    {/* {isSendingEmailModalOn ? 'Sending email..' : "Submit"} */}
-                    Submit
+                    {isSendingEmail ? "Sending email..." : "Submit"}
                 </Button>
             </div>
         </Form>

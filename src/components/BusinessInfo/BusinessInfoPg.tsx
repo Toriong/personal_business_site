@@ -27,7 +27,7 @@ const BusinessInfoPg = () => {
         <section>
           <span className='ps-0 ps-md-5'>
             <i className='ps-0 ps-md-4'>
-              Currently in the process of designing contracts for clients. Stay tuned!
+              Currently in the process of designing contracts for clients. Stay tune!
             </i>
           </span>
         </section>

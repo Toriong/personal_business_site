@@ -6,10 +6,17 @@ import TwitterBtn from '../buttons/TwitterBtn';
 import MyWebSiteBtn from '../buttons/MyWebSiteBtn';
 import moment from 'moment'
 import '../css/footer.css'
+import { businessEmail, phoneNum } from '../contactVals';
 
 
 const Footer = () => {
     const currentYear = moment().year();
+
+    const handlePhoneNumClick = () => { window.open(`tel:+${phoneNum}`) };
+
+    const handleEmailClick = () => {
+        window.location.href = `mailto:${businessEmail}?subject=Subject&body=message%20goes%20here`;
+    }
 
     return (
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
@@ -74,11 +81,11 @@ const Footer = () => {
 
                             <div className='col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4'>
                                 <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
-                                <p className='contactTxtFooter'>
+                                <p className='contactTxtFooter' onClick={handleEmailClick} style={{ cursor: 'pointer' }}>
                                     <AiOutlineMail className='iconColor me-1' />
                                     gtorion97freelancing@gmail.com
                                 </p>
-                                <p className='contactTxtFooter'>
+                                <p className='contactTxtFooter' onClick={handlePhoneNumClick} style={{ cursor: 'pointer' }}>
                                     <AiOutlinePhone className='iconColor me-1' />
                                     #425-219-7437
                                 </p>

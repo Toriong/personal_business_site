@@ -7,6 +7,7 @@ import { ImLinkedin2 } from "react-icons/im";
 import Button from 'react-bootstrap/Button';
 import '../../css/mainPage/businessCard.css'
 import TwitterBtn from '../../buttons/TwitterBtn';
+import BookACall from '../../buttons/BookACall';
 
 const { Body, Title, Text, Img, Subtitle } = Card;
 
@@ -121,12 +122,7 @@ const BusinessCard = () => {
                             </div>
                             <div className='row d-none businessCalBtnContainer'>
                                 <div className='col-12 d-flex justify-content-center align-items-center'>
-                                    <Button
-                                        variant='primary'
-                                        className='d-flex justify-content-center align-items-center noOutline businessCalBtn pulse'
-                                    >
-                                        SET UP A BUSINESS CALL!
-                                    </Button>
+                                    <BookACall isOnBusinessCard isPulseOn />
                                 </div>
                             </div>
                         </section>

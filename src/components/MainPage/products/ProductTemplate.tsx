@@ -1,23 +1,18 @@
-import React, { FC, MouseEvent, useContext, useEffect } from 'react'
-import { DesignType, ProductDesigns, ProductsImgs, ProductTemplateProps } from '../../../interfaces/interfaces'
+import React, { FC, MouseEvent, useContext, useRef } from 'react'
+import { DesignType, ProductDesigns, ProductTemplateProps } from '../../../interfaces/interfaces'
 import Button from 'react-bootstrap/Button';
-import '../../../css/products/productTemplate.css'
 import BookACall from '../../../buttons/BookACall';
 import { ModalContext } from '../../../providers/Providers';
 import { SelectedProduct } from '../../../interfaces/interfaces';
 import productsImgs from '../../../data/productImgs.json';
-
-// BRAIN DUMP:
-// if the user is on the product page, show the following buttons: mobile, tablet, desktop
-
-// GOAL: get the string that will act as the selector for the json data that has all of the images of the productsImgs 
-
+import '../../../css/products/productTemplate.css'
 
 
 const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isOnProductsPg, title, productNumString }) => {
-    const { setSelectedProduct, selectedProduct, setIsPicturesModalOn, isPicturesModalOn } = useContext(ModalContext)
+    const { setSelectedProduct, setIsPicturesModalOn } = useContext(ModalContext)
     const [img1, img2, img3] = imgs;
     const [text1, text2, text3, text4] = descriptionTexts
+    const productRef = useRef<HTMLElement>(null)
 
 
     const getDesignImgs = (productNumString?: string): ProductDesigns => {
@@ -32,7 +27,7 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
 
     const addUrlToImgs = (imgs: Array<string>, designType: DesignType): Array<string> => {
         const appUrl = window.location.origin;
-        const { isDesktop, isMobile, isTablet } = designType
+        const { isDesktop, isTablet } = designType
         if (productNumString === 'product2') {
 
         }
@@ -72,13 +67,13 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
         setIsPicturesModalOn(true);
     };
 
-    useEffect(() => {
-        console.log('selectedProduct: ', selectedProduct);
-        console.log('isPicturesModalOn: ', isPicturesModalOn)
-    })
+    const handleViewProductClick = () => {
+        window.location.href = `${window.location.origin}/products`
+        localStorage.setItem('viewProduct', title as string)
+    };
 
     return (
-        <section className='row noMargin noPadding pt-3 d-flex flex-column flex-lg-row'>
+        <section className='row noMargin noPadding pt-3 d-flex flex-column flex-lg-row' ref={productRef}>
             <section className='d-flex flex-column col-12 col-lg-6 productScreenShots'>
                 <section className='d-flex flex-column'>
                     <section className='d-flex justify-content-center align-items-center'>
@@ -126,7 +121,7 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
                             </section>
                         </>
                         :
-                        <Button variant='primary'>VIEW PRODUCT</Button>
+                        <Button variant='primary' onClick={handleViewProductClick}>VIEW PRODUCT</Button>
                     }
                 </section>
             </div>

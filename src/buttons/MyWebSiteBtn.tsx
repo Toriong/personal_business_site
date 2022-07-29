@@ -7,6 +7,7 @@ const MyWebSiteBtn: FC<BtnProps> = ({ isOnNavbar }) => {
 
     return <Button
         className={_className}
+        onClick={() => { alert("In the process of making my personal website! Stay tune!") }}
     >
         GT
     </Button>
