@@ -18,6 +18,8 @@ const Footer = () => {
         window.location.href = `mailto:${businessEmail}?subject=Subject&body=message%20goes%20here`;
     }
 
+
+
     return (
         <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
             <div className='subContainerFooter'>
@@ -49,12 +51,12 @@ const Footer = () => {
                             <div className='col-md-2 col-lg-2 col-xl-2 mx-auto mb-4'>
                                 <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='/products' className='text-reset'>
                                         Auto Repair Shop Site
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='/products' className='text-reset'>
                                         View More
                                     </a>
                                 </p>
@@ -63,17 +65,17 @@ const Footer = () => {
                             <div className='col-md-3 col-lg-2 col-xl-2 mx-auto mb-4'>
                                 <h6 className='text-uppercase fw-bold mb-4'>Navigate to:</h6>
                                 <p>
-                                    <a href='#!' className='text-reset'>
-                                        Our Meetings
+                                    <a href='/products' className='text-reset'>
+                                        Products
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
-                                        Contracts
+                                    <a href='/business' className='text-reset'>
+                                        Business Info
                                     </a>
                                 </p>
                                 <p>
-                                    <a href='#!' className='text-reset'>
+                                    <a href='/contact' className='text-reset'>
                                         Contact
                                     </a>
                                 </p>

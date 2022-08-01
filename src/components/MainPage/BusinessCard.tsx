@@ -68,7 +68,7 @@ const BusinessCard = () => {
                                 <div className='col-12 d-flex justify-content-center align-items-center'>
                                     <div className='contactsOnMobile d-flex justify-content-between'>
                                         <AiOutlinePhone className='iconColor' />
-                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>{phoneNum}</span>
+                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>#{phoneNum}</span>
                                     </div>
                                 </div>
                             </div>
