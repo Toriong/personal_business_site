@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/Button';
 import '../../css/mainPage/businessCard.css'
 import TwitterBtn from '../../buttons/TwitterBtn';
 import BookACall from '../../buttons/BookACall';
+import LinkedInBtn from '../../buttons/LinkedInBtn';
+import MyWebSiteBtn from '../../buttons/MyWebSiteBtn';
 
 const { Body, Title, Text, Img, Subtitle } = Card;
 
@@ -90,34 +92,18 @@ const BusinessCard = () => {
                             </div>
                             <div className='row d-flex mt-4 justify-content-center justify-content-md-start w-100 noMargin'>
                                 <div className='col-2 d-none d-sm-block'>
-                                    <Button
-                                        className='d-flex justify-content-center align-items-center linkBtns noOutline'
-                                    >
-                                        <ImLinkedin2 />
-                                    </Button>
+                                    <LinkedInBtn />
                                 </div>
                                 <div className='col-2 d-none d-sm-block'>
                                     <TwitterBtn />
                                 </div>
                                 <div className='col-2 d-none d-sm-block'>
-                                    <Button
-                                        className='d-flex justify-content-center align-items-center linkBtns noOutline personalWebsiteBtn'
-                                    >
-                                        GT
-                                    </Button>
+                                    <MyWebSiteBtn />
                                 </div>
                                 <div className='col-12 d-flex d-sm-none justify-content-center noMargin noPadding'>
-                                    <Button
-                                        className='d-flex justify-content-center align-items-center linkBtns noOutline me-2'
-                                    >
-                                        <ImLinkedin2 />
-                                    </Button>
+                                    <LinkedInBtn />
                                     <TwitterBtn />
-                                    <Button
-                                        className='d-flex justify-content-center align-items-center linkBtns noOutline personalWebsiteBtn ms-2'
-                                    >
-                                        GT
-                                    </Button>
+                                    <MyWebSiteBtn />
                                 </div>
                             </div>
                             <div className='row d-none businessCalBtnContainer'>
@@ -131,12 +117,7 @@ const BusinessCard = () => {
                 <section className='container-fluid businessCallBtnContainer onSmallerScreen'>
                     <section className='row'>
                         <section className='col-12 d-flex justify-content-center align-items-center'>
-                            <Button
-                                variant='primary'
-                                className='d-flex justify-content-center align-items-center noOutline businessCalBtn pulse'
-                            >
-                                SET UP A BUSINESS CALL!
-                            </Button>
+                            <BookACall isOnBusinessCard isPulseOn />
                         </section>
                     </section>
                 </section>
