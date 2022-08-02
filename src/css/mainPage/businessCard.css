@@ -220,6 +220,10 @@
         animation: fadeInOnMobile 2s;
     }
 
+    .myInfoCard{
+        height: 950px !important;
+    }
+
     @keyframes fadeInOnMobile {
         from {
             opacity: 0;

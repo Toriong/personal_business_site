@@ -17,7 +17,7 @@ const { Body, Title, Text, Img, Subtitle } = Card;
 const BusinessCard = () => {
     return (
         <Card className='myInfoCard border border-white noOutline introPicAnimation fadeInOnMobile'>
-            <Body className='h-100'>
+            <Body>
                 <section className='d-flex flex-column flex-md-row'>
                     <div className='d-flex justify-content-center meImgMainContainer'>
                         <div className='w-75 h-100 position-relative meImgContainer'>
