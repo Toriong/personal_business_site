@@ -15,6 +15,13 @@ const { Body, Title, Text, Img, Subtitle } = Card;
 
 
 const BusinessCard = () => {
+
+    const handlePhoneNumClick = () => { window.open(`tel:+${phoneNum}`) };
+
+    const handleEmailClick = () => {
+        window.location.href = `mailto:${businessEmail}?subject=Subject&body=message%20goes%20here`;
+    };
+
     return (
         <Card className='myInfoCard border border-white noOutline introPicAnimation fadeInOnMobile'>
             <Body>
@@ -47,14 +54,14 @@ const BusinessCard = () => {
                                     <AiOutlineMail className='iconColor' />
                                 </div>
                                 <div className='col-10 position-relative'>
-                                    <span className='text-muted position-absolute contactTxt'>{businessEmail}</span>
+                                    <span onClick={handleEmailClick} className='text-muted position-absolute contactTxt'>{businessEmail}</span>
                                 </div>
                             </div>
                             <div className='row d-flex d-md-none w-100 noMargin'>
                                 <div className='col-12 d-flex justify-content-center align-items-center'>
                                     <div className='contactsOnMobile d-flex justify-content-between'>
                                         <AiOutlineMail className='iconColor' />
-                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>{businessEmail}</span>
+                                        <span onClick={handleEmailClick} className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>{businessEmail}</span>
                                     </div>
                                 </div>
                             </div>
@@ -63,14 +70,14 @@ const BusinessCard = () => {
                                     <AiOutlinePhone className='iconColor' />
                                 </div>
                                 <div className='col-9 position-relative'>
-                                    <span className='text-muted position-absolute contactTxt'>#{phoneNum}</span>
+                                    <span onClick={handlePhoneNumClick} className='text-muted position-absolute contactTxt'>#{phoneNum}</span>
                                 </div>
                             </div>
                             <div className='row d-flex d-md-none w-100 mt-2 noMargin'>
                                 <div className='col-12 d-flex justify-content-center align-items-center'>
                                     <div className='contactsOnMobile d-flex justify-content-between'>
                                         <AiOutlinePhone className='iconColor' />
-                                        <span className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>#{phoneNum}</span>
+                                        <span onClick={handlePhoneNumClick} className='text-muted ps-1 contactTxtOnCard d-flex justify-content-center align-items-center'>#{phoneNum}</span>
                                     </div>
                                 </div>
                             </div>
