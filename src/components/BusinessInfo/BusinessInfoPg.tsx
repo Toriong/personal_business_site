@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const BusinessInfoPg = () => {
   return (
@@ -14,9 +14,14 @@ const BusinessInfoPg = () => {
         </section>
         <section>
           <span className='ps-0 ps-md-5'>
-            <i className='ps-0 ps-md-4'>
-              Documents on how I will conduct our meetings will be provided shortly.
-            </i>
+            <a 
+            className='ps-0 ps-md-4'
+            href={`${window.location.origin}/Meetings.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            >
+                Meetings
+            </a>
           </span>
         </section>
       </section>
@@ -25,10 +30,23 @@ const BusinessInfoPg = () => {
           <h4 className='ps-0 ps-md-5'>Contracts</h4>
         </section>
         <section>
-          <span className='ps-0 ps-md-5'>
-            <i className='ps-0 ps-md-4'>
-              Currently in the process of designing contracts for clients. Stay tune!
-            </i>
+          <span className='ps-0 ps-md-5 d-flex flex-column'>
+          <a 
+            className='ps-0 ps-md-4'
+            href={`${window.location.origin}/InitialContract.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            >
+                Starting Contract
+            </a>
+            <a 
+            className='ps-0 ps-md-4 mt-2'
+            href={`${window.location.origin}/paymentContract.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            >
+                Payment Contract
+            </a>
           </span>
         </section>
       </section>
