@@ -37,7 +37,7 @@ const BusinessInfoPg = () => {
             target="_blank"
             rel="noreferrer"
             >
-                Starting Contract
+                Initial Contract
             </a>
             <a 
             className='ps-0 ps-md-4 mt-2'
