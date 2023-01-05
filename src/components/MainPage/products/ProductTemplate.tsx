@@ -114,7 +114,7 @@ const ProductTemplate: FC<ProductTemplateProps> = ({ imgs, descriptionTexts, isO
                                 </Button>
                             </section>
                             <section className='d-flex justify-content-center align-items-center pt-4'>
-                                <a className='text-muted fst-italic' href='https://template-auto-shop.herokuapp.com/' target="_blank">Click To View Site</a>
+                                <span className='text-muted fst-italic clickToViewTxt' onClick={() => { alert("Sorry, this site is under going maintenance. Please try again later.") }}>Click To View Site</span>
                             </section>
                             <section className='d-flex justify-content-center align-items-center pt-4'>
                                 <BookACall isOnProductsPg />

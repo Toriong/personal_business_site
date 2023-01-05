@@ -3,3 +3,8 @@
     padding-bottom: 30px;
     max-width: 2560px;
 }
+
+.clickToViewTxt:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
